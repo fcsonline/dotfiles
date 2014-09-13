@@ -157,11 +157,18 @@ if [ -f ~/.bash_secrets ]; then
     source ~/.bash_secrets
 fi
 
+# Awesome command search
 if [ -f ~/.fzf.bash ]; then
     source ~/.fzf.bash
 fi
 
+# Go environment
 if [ -d $HOME/Development/go ]; then
   export GOPATH=$HOME/Development/go
   export PATH=$PATH:$GOPATH/bin
+fi
+
+# Ruby environment
+if [ -f $HOME/.rvm/scripts/rvm ]; then
+  source $HOME/.rvm/scripts/rvm
 fi
