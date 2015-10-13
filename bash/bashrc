@@ -150,8 +150,6 @@ export PATH=$PATH:$HOME/Development/depot_tools
 # Love
 export EDITOR=vim
 
-ulimit -n 3000
-
 # Keep the secrets, in secret
 if [ -f ~/.bash_secrets ]; then
     source ~/.bash_secrets
