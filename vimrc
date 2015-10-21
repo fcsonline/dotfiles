@@ -10,7 +10,6 @@ set ruler           " Show the line and column number of the cursor position, se
 set mouse=a         " Enable the use of the mouse.
 set incsearch       " While typing a search command, show immediately where the so far typed pattern matches.
 set number          " Show line numbers.
-set cursorline      " Highlight current line
 set noerrorbells    " Shut up the beep
 set vb              " Visual flash bell bell
 set nocompatible    " Disable compatibility with vi
