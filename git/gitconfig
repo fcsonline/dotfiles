@@ -29,8 +29,12 @@
 	publish= !git push origin $(git current)
 	id = !echo "git clone --recursive $(git origin) --branch $(git current)"
 	recent = !git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ | grep -v develop | head -n 10
-  fixup = "!f() { git commit --fixup=$1; git rebase -i --autosquash $1~1; }; f"
+	fixup = "!f() { git commit --fixup=$1; git rebase -i --autosquash $1~1; }; f"
 	wip = !git add --all . && git commit -m 'WIP'
+	pam= !git checkout $(git recent | pim)
+	pamfix= !git fixup $(git log --pretty=oneline | head | pim | cut -d' ' -f1)
+	pamshow= !git show $(git log --pretty=oneline | head | pim | cut -d' ' -f1)
+	pamvim= !mvim $(git status -s | pim | cut -d' ' -f3)
 	root = !pwd
 	back = checkout -
 [push]
