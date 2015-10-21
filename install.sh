@@ -22,5 +22,13 @@ yes | ~/.fzf/install > /dev/null
 message "Git"
 ln -sf ${PWD}/git/gitconfig ~/.gitconfig
 
+# VIM
+message "Vim"
+ln -sf ${PWD}/vimrc ~/.vimrc
+ln -sf ${PWD}/vim ~/.vim
+ln -sf ${PWD}/bash/bashrc ~/.bashrc
+ln -sf ${PWD}/bash/bash_profile ~/.bash_profile
+ln -sf ${PWD}/bash/bash_aliases ~/.bash_aliases
+
 # Execute it immediately
 source ~/.bashrc
