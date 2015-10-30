@@ -16,7 +16,8 @@ set nocompatible    " Disable compatibility with vi
 set laststatus=2    " Display the status line always
 set statusline=%<\ %t\ %m%r%y%w%{fugitive#statusline()}%=Col:\ \%c\ Lin:\ \%l\/\%L\
 set shell=/bin/bash " Used shell for executed commands
-set hlsearch        " To highlight all search matches,
+set hlsearch        " To highlight all search matches
+set nowrap          " Don't wrap lines
 
 :set t_Co=256       " For certain color-limited terminals
 filetype on               " Turn on filetype detection
