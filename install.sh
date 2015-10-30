@@ -16,7 +16,7 @@ ln -sf ${PWD}/bash/bash_aliases ~/.bash_aliases
 message "FZF"
 rm -rf ~/.fzf
 git clone -q https://github.com/junegunn/fzf.git ~/.fzf
-yes | ~/.fzf/install > /dev/null
+yes | ~/.fzf/install > /dev/null 2>&1
 
 # GIT
 message "Git"
@@ -26,6 +26,11 @@ ln -sf ${PWD}/git/gitconfig ~/.gitconfig
 message "Vim"
 ln -sf ${PWD}/vimrc ~/.vimrc
 ln -sf ${PWD}/vim ~/.vim
+
+pushd ${PWD}
+  git submodule init > /dev/null 2>&1
+  git submodule update > /dev/null 2>&1
+popd
 
 # Execute it immediately
 source ~/.bashrc
