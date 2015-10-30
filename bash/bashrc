@@ -173,5 +173,5 @@ fi
 
 # Local bin path
 if [ -d ~/.bin ]; then
-  export PATH=$PATH:~/.bin
+  export PATH=~/.bin:$PATH
 fi
