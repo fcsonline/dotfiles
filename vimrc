@@ -70,16 +70,6 @@ map <Leader>m :NERDTreeFind<CR>
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
-" nnoremap <silent> <Leader>t :CommandT<CR>
-" nnoremap <silent> <Leader>b :CommandTBuffer<CR>
 
-"" Opens a tab edit command with the path of the currently edited file filled in
-"" Normal mode: <Leader>t
-"map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-"
-"" Inserts the path of the currently edited file into a command
-"" Command mode: Ctrl+P
-"cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-"
-"" Hitting F5 will clean out all trailing whitespace or tabs
-"nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
+" Syntastic configuration
+let g:syntastic_javascript_checkers = ['eslint']
