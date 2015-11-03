@@ -26,6 +26,8 @@ ln -sf ${PWD}/git/gitconfig ~/.gitconfig
 message "Vim"
 ln -sf ${PWD}/vimrc ~/.vimrc
 ln -sf ${PWD}/vim ~/.vim
+mkdir -pf ~/.vim/{tmpdir,undodir}
+chmod 700 ~/.vim/{tmpdir,undodir}
 
 pushd ${PWD}
   git submodule init > /dev/null 2>&1

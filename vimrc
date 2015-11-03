@@ -30,6 +30,10 @@ let mapleader=","   " Sets the leader key
 
 set list listchars=tab:..,trail:☠ " Display extra whitespace
 
+" Undo file
+set undofile
+set undodir=~/.vim/undodir/
+
 " Utilities
 cab uniq %s/^\(.*\)\(\n\1\)\+$/\1/
 
