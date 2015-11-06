@@ -31,14 +31,16 @@
 	recent = !git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ | grep -v develop | head -n 10
 	fixup = "!f() { git commit --fixup=$1; git rebase -i --autosquash $1~1; }; f"
 	wip = !git add --all . && git commit -m 'WIP'
-	pam= !git checkout $(git recent | fzf)
-	pamadd= !git add --all $(git status -s | awk '{ print $2 }' | fzf -m)
-	pamfix= !git fixup $(git log --pretty=oneline | head | fzf | awk '{ print $1 }')
-	pamshow= !git show $(git log --pretty=oneline | head | fzf | awk '{ print $1 }')
-	pamrebase= !git rebase -i $(git log --pretty=oneline | head | fzf | awk '{ print $1 }')
-	pamvim= !vim $(git status -s | awk '{ print $2 }' | fzf -m)
 	root = !pwd
 	back = checkout -
+
+  # Welcome to pam/fzf heaven
+	pam= !git recent | fzf | xargs -o git checkout
+	pamadd= !git status -s | awk '{ print $2 }' | fzf -m | xargs -o git add --all
+	pamfix= !git log --pretty=oneline | head | fzf | awk '{ print $1 }' | xargs -o git fixup
+	pamshow= !git log --pretty=oneline | head | fzf | awk '{ print $1 }' | xargs -o git show
+	pamrebase= !git log --pretty=oneline | head | fzf | awk '{ print $1 }' | xargs -o -I {} git rebase -i {}^
+	pamvim= !git status -s | awk '{ print $2 }' | fzf -m | xargs -o vim
 [push]
 	default = simple
 [merge "railsschema"]
