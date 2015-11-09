@@ -34,13 +34,13 @@
 	root = !pwd
 	back = checkout -
 
-  # Welcome to pam/fzf heaven
-	pam= !git recent | fzf | xargs -o git checkout
-	pamadd= !git status -s | awk '{ print $2 }' | fzf -m | xargs -o git add --all
-	pamfix= !git log --pretty=oneline | head | fzf | awk '{ print $1 }' | xargs -o git fixup
-	pamshow= !git log --pretty=oneline | head | fzf | awk '{ print $1 }' | xargs -o git show
-	pamrebase= !git log --pretty=oneline | head | fzf | awk '{ print $1 }' | xargs -o -I {} git rebase -i {}^
-	pamvim= !git status -s | awk '{ print $2 }' | fzf -m | xargs -o vim
+  # Welcome to pam/fzf heaven. xargs hell
+	pam= !BRANCH=`git recent | fzf` && git checkout ${BRANCH}
+	pamadd= !FILES=`git status -s | awk '{ print $2 }' | fzf -m` && git add --all ${FILES}
+	pamfix= !HASH=`git log --pretty=oneline | head | fzf` && git fixup `echo ${HASH} | awk '{ print $1 }'`
+	pamshow= !HASH=`git log --pretty=oneline | head | fzf` && git show `echo ${HASH} | awk '{ print $1 }'`
+	pamrebase= !HASH=`git log --pretty=oneline | head | fzf` && git rebase -i `echo ${HASH} | awk '{ print $1 }'`^
+	pamvim= !FILES=`git status -s | awk '{ print $2 }' | fzf -m` && vim ${FILES}
 [push]
 	default = simple
 [merge "railsschema"]
