@@ -43,6 +43,7 @@
 	pamrebase= !HASH=`git log --pretty=oneline | head | fzf` && git rebase -i `echo ${HASH} | awk '{ print $1 }'`^
 	pamvim= !FILES=`git status -s | awk '{ print $2 }' | fzf -m` && vim ${FILES}
 	pamgrep= !sh -c 'FILES=`git grep -A 0 -B 0 $1 $2 | fzf -m` && vim `echo ${FILES} | cut -d':' -f1`' -
+	pamvimlast= !FILES=`git show --pretty='format:'  --name-only HEAD | fzf -m` && vim ${FILES}
 [push]
 	default = simple
 [merge "railsschema"]
