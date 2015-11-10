@@ -33,6 +33,7 @@
 	wip = !git add --all . && git commit -m 'WIP'
 	root = !pwd
 	back = checkout -
+	upstream = !git branch --set-upstream-to=origin/$(git current) $(git current)
 
   # Welcome to pam/fzf heaven. xargs hell
 	pam= !BRANCH=`git recent | fzf` && git checkout ${BRANCH}
