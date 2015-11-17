@@ -77,3 +77,18 @@ let g:CommandTMaxHeight=20
 
 " Syntastic configuration
 let g:syntastic_javascript_checkers = ['eslint']
+
+" Tell vim to remember certain things when we exit
+set viminfo='10,\"100,:20,%,n~/.viminfo
+
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
