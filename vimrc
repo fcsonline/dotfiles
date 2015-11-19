@@ -92,3 +92,10 @@ augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
 augroup END
+
+" Typo aliases
+:command WQ wq
+:command Wa wa
+:command Wq wq
+:command W w
+:command Q q
