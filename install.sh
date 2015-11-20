@@ -11,6 +11,7 @@ message "Bash"
 ln -sf ${PWD}/bash/bashrc ~/.bashrc
 ln -sf ${PWD}/bash/bash_profile ~/.bash_profile
 ln -sf ${PWD}/bash/bash_aliases ~/.bash_aliases
+ln -sf ${PWD}/bash/inputrc ~/.inputrc
 
 # BASH FZF
 message "FZF"

@@ -1,1 +1,3 @@
 . ~/.bashrc
+
+set -o vi
