@@ -1,11 +1,19 @@
+# CD
 alias ..='cd ..'
 alias ...='cd ../..'
-alias android-connect='mtpfs -o allow_other /media/GalaxyNexus'
-alias android-disconnect='fusermount -u /media/GalaxyNexus'
-alias be='bundle exec'
 alias cd..='cd ..'
 alias cd...='cd ../..'
-alias d='docker'
+
+# LS
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+
+# ANDROID
+alias android-connect='mtpfs -o allow_other /media/GalaxyNexus'
+alias android-disconnect='fusermount -u /media/GalaxyNexus'
+
+# GIT
 alias ga='git add'
 alias gap='git add -p'
 alias gb='git branch'
@@ -27,14 +35,18 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gs='git status -s'
 alias gsgp='git stash && git pull origin `git branch | grep ^* |sed s/\*\ //` && git stash pop'
-alias l='ls -CF'
-alias la='ls -A'
-alias ll='ls -alF'
-alias mongod-repair='sudo rm /var/lib/mongodb/mongod.lock && sudo -u mongodb mongod -f /etc/mongodb.conf --repair && sudo service mongodb restart && sleep 30 && mongo'
-alias pi='ssh -X pi@192.168.1.118'
+
+# SCREEN
 alias sc='screen -q'
 alias sd='screen -d'
 alias sl='screen -ls'
 alias sr='screen -r'
+
+# UTILS
+alias be='bundle exec'
+alias d='docker'
+alias rl='rlwrap --multi-line -a --'
+alias mongod-repair='sudo rm /var/lib/mongodb/mongod.lock && sudo -u mongodb mongod -f /etc/mongodb.conf --repair && sudo service mongodb restart && sleep 30 && mongo'
+alias pi='ssh -X pi@192.168.1.118'
 alias z='zeus'
 alias zc='zeus console'
