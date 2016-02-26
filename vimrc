@@ -51,6 +51,9 @@ set wildignore+=tmp,public,vendor/bundle/*,vendor/cache/*,test/fixtures/*,vendor
 noremap  x "_x
 vnoremap  x "_x
 
+" Remove the highlighted search after two esc
+nnoremap <esc><esc> :noh<return><esc>
+
 " Keep visual mode after indenting
 vmap < <gv
 vmap > >gv
