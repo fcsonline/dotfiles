@@ -24,7 +24,7 @@ filetype on               " Turn on filetype detection
 filetype plugin indent on " Turn on indentation
 syntax on                 " Turn on syntax on
 
-colorscheme darkblue " My favourite schemecolor
+colorscheme meta5 " My favourite schemecolor
 
 let mapleader=","   " Sets the leader key
 
