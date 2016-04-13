@@ -7,7 +7,7 @@ alias cd...='cd ../..'
 # LS
 alias l='ls -CF'
 alias la='ls -A'
-alias ll='ls -alF'
+alias ll='ls -alFh'
 
 # ANDROID
 alias android-connect='mtpfs -o allow_other /media/GalaxyNexus'
@@ -27,7 +27,7 @@ alias gitroot='cd $(git rev-parse --show-cdup)'
 alias gitvim='vim `git status -s | grep "[^/]$" | sed s/^...// | xargs`'
 alias gl='git log'
 alias gm='git commit -m'
-alias gma='git commit -am'
+alias gma='git commit --amend --no-edit'
 alias gp='git publish'
 alias gpu='git pull'
 alias gr='git rebase'
