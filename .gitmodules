@@ -31,3 +31,12 @@
 [submodule "vim/bundle/meta5"]
 	path = vim/bundle/meta5
 	url = https://github.com/christophermca/meta5
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "vim/bundle/vim-pug"]
+	path = vim/bundle/vim-pug
+	url = git://github.com/digitaltoad/vim-pug.git
+[submodule "vim/bundle/vim-rest-console"]
+	path = vim/bundle/vim-rest-console
+	url = https://github.com/diepm/vim-rest-console.git
