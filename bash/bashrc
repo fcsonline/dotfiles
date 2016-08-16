@@ -176,3 +176,9 @@ fi
 if [ -d ~/.bin ]; then
   export PATH=~/.bin:$PATH
 fi
+
+# Disable flow control. Ctrl-s + Ctrl-q
+stty stop ''
+stty start ''
+stty -ixon
+stty -ixoff
