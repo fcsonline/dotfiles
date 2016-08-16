@@ -83,6 +83,7 @@ let g:CommandTMaxHeight=20
 
 " Syntastic configuration
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_ruby_checkers       = ['rubocop', 'reek']
 
 " Tell vim to remember certain things when we exit
 set viminfo='10,\"100,:20,%,n~/.viminfo
