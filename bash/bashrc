@@ -135,42 +135,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Trim path directories
 export PROMPT_DIRTRIM=1
-
-export RBENV_ROOT="$HOME/.rbenv"
-
-if [ -d $RBENV_ROOT ]; then
-  export PATH="$RBENV_ROOT/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
-
-# Google Chrome Devopt Tools
-export PATH=$PATH:$HOME/Development/depot_tools
 
 # Love
 export EDITOR=vim
 set -o vi
-
-# Keep the secrets, in secret
-if [ -f ~/.bash_secrets ]; then
-    source ~/.bash_secrets
-fi
-
-# Awesome command search
-if [ -f ~/.fzf.bash ]; then
-    source ~/.fzf.bash
-fi
-
-# Go environment
-if [ -d $HOME/Development/go ]; then
-  export GOPATH=$HOME/Development/go
-  export PATH=$PATH:$GOPATH/bin
-fi
-
-# Ruby environment
-if [ -f $HOME/.rvm/scripts/rvm ]; then
-  source $HOME/.rvm/scripts/rvm
-fi
 
 # Local bin path
 if [ -d ~/.bin ]; then
@@ -182,3 +152,34 @@ stty stop ''
 stty start ''
 stty -ixon
 stty -ixoff
+
+# Keep the secrets, in secret
+if [ -f ~/.bash_secrets ]; then
+    source ~/.bash_secrets
+fi
+
+# Awesome command search
+if [ -f ~/.fzf.bash ]; then
+    source ~/.fzf.bash
+fi
+
+# Rbenv path
+export RBENV_ROOT="$HOME/.rbenv"
+if [ -d "$RBENV_ROOT" ]; then
+  export PATH="$RBENV_ROOT/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+
+# Google Chrome Devopt Tools
+export PATH=$PATH:$HOME/Development/depot_tools
+
+# Go environment
+if [ -d "$HOME/Development/go" ]; then
+  export GOPATH="$HOME/Development/go"
+  export PATH="$PATH:$GOPATH/bin"
+fi
+
+# Ruby environment
+if [ -f "$HOME/.rvm/scripts/rvm" ]; then
+  source "$HOME/.rvm/scripts/rvm"
+fi
