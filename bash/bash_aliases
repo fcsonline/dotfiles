@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # CD
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -50,3 +52,4 @@ alias mongod-repair='sudo rm /var/lib/mongodb/mongod.lock && sudo -u mongodb mon
 alias pi='ssh -X pi@192.168.1.118'
 alias z='zeus'
 alias zc='zeus console'
+alias open='xdg-open > /dev/null 2>&1'
