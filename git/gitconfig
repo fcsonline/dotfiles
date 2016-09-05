@@ -34,7 +34,7 @@
 	root = !pwd
 	back = checkout -
 	upstream = !git branch --set-upstream-to=origin/$(git current) $(git current)
-	repo=!git remote -v | grep '@.*fetch' | gsed 's/.*:\\(.*\\).git.*/\\1/g'
+	repo=!git remote -v | grep '@.*fetch' | sed 's/.*:\\(.*\\).git.*/\\1/g'
 	pr=!open https://github.com/$(git repo)/compare/$(git current)?expand=1
 
   # Welcome to pam/fzf heaven. xargs hell
@@ -46,8 +46,8 @@
 	pamrebase= !HASH=`git log --pretty=oneline | head -n 50 | fzf` && git rebase -i `echo ${HASH} | awk '{ print $1 }'`^
 	pamvim= !FILES=`git status -s | awk '{ print $2 }' | fzf -x -m` && vim ${FILES}
 	pamgrep= !sh -c 'FILES=`git grep -l -A 0 -B 0 $1 $2 | fzf -x -m` && vim `echo ${FILES} | cut -d':' -f1 | xargs`' -
-	pamvimlog= !HASH=`git log --pretty=oneline | head | fzf` && HASHZ=`echo ${HASH} | awk '{ print $1 }'` && FILES=`git show --pretty='format:'  --name-only $HASHZ | fzf -x -m` && vim ${FILES}
-	pamreset= !HASH=`git log --pretty=oneline | head | fzf` && git reset --soft `echo ${HASH} | awk '{ print $1 }'`^
+	pamvimlog= !HASH=`git log --pretty=oneline | head -n 50 | fzf` && HASHZ=`echo ${HASH} | awk '{ print $1 }'` && FILES=`git show --pretty='format:'  --name-only $HASHZ | fzf -x -m` && vim ${FILES}
+	pamreset= !HASH=`git log --pretty=oneline | head -n 50 | fzf` && git reset --soft `echo ${HASH} | awk '{ print $1 }'`^
 [push]
 	default = simple
 [merge "railsschema"]
