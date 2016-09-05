@@ -67,6 +67,9 @@ map <down>  <nop>
 map <left>  <nop>
 map <right> <nop>
 
+" Disable markdown folding
+let g:vim_markdown_folding_disabled = 1
+
 " Set swap and backup directories outside your working directory
 " the double slash path at the end allows you to avoid collisions
 " opening files with the same name in different directories
