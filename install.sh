@@ -6,6 +6,10 @@ message ()
   echo -e "Installing \033[1;3${RCOLOR}m$1\033[0m scripts..."
 }
 
+# TMUX
+message "Tmux"
+ln -snf ${PWD}/tmux/tmux.conf ~/.tmux.conf
+
 # BASH
 message "Bash"
 ln -snf ${PWD}/bash/bashrc ~/.bashrc
