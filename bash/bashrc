@@ -153,6 +153,9 @@ stty start ''
 stty -ixon
 stty -ixoff
 
+# Disalbe capslock
+setxkbmap -option caps:ctrl_modifier
+
 # Keep the secrets, in secret
 if [ -f ~/.bash_secrets ]; then
     source ~/.bash_secrets
