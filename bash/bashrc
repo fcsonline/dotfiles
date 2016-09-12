@@ -67,7 +67,7 @@ function git_ps1 {
   git branch &>/dev/null
 
   if [ $? -eq 0 ]; then
-    GIT_BRANCH=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ \1/"`
+    GIT_BRANCH=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ \1/")
 
     if [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]]; then
       GIT_COLOR="${RED}"
