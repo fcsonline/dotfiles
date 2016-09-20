@@ -40,3 +40,6 @@
 [submodule "vim/bundle/vim-rest-console"]
 	path = vim/bundle/vim-rest-console
 	url = https://github.com/diepm/vim-rest-console.git
+[submodule "tmux/plugins/tmux-battery"]
+	path = tmux/plugins/tmux-battery
+	url = https://github.com/tmux-plugins/tmux-battery

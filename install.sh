@@ -9,6 +9,7 @@ message ()
 # TMUX
 message "Tmux"
 ln -snf "${PWD}/tmux/tmux.conf" ~/.tmux.conf
+ln -snf "${PWD}/tmux/plugins" ~/.tmux-plugins
 
 # BASH
 message "Bash"
