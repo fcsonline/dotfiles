@@ -140,7 +140,12 @@ export PROMPT_DIRTRIM=1
 
 # Love
 export EDITOR=vim
+
+# Enable vi mode in bash
 set -o vi
+
+# Enable Ctrl+L in vi mode
+bind -m vi-insert "\C-l":clear-screen
 
 # Local bin path
 if [ -d ~/.bin ]; then
