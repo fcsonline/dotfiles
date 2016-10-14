@@ -30,6 +30,7 @@
 	id = !echo "git clone --recursive $(git origin) --branch $(git current)"
 	recent = !git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ | grep -v develop | head -n 10
 	fixup = "!f() { git commit --fixup=$1; git rebase -i --autosquash $1~1; }; f"
+	fixit = "!f() { git commit --fixup=$1; GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash $1~1; }; f"
 	wip = !git add --all . && git commit -m 'WIP'
 	root = !pwd
 	back = checkout -
@@ -40,7 +41,7 @@
   # Welcome to pam/fzf heaven. xargs hell
 	pam= !BRANCH=`git recent | fzf` && git checkout ${BRANCH}
 	pamadd= !FILES=`git status -s | awk '{ print $2 }' | fzf -x -m` && git add --all ${FILES}
-	pamfix= !HASH=`git log --pretty=oneline | head | fzf` && git fixup `echo ${HASH} | awk '{ print $1 }'`
+	pamfix= !HASH=`git log --pretty=oneline | head | fzf` && git fixit `echo ${HASH} | awk '{ print $1 }'`
 	pamshow= !HASH=`git log --pretty=oneline | head | fzf` && git show `echo ${HASH} | awk '{ print $1 }'`
 	pamlog= !HASH=`git log --pretty=oneline | head | fzf` && echo ${HASH} | awk '{ print $1 }' | xargs echo -n | pbcopy
 	pamrebase= !HASH=`git log --pretty=oneline | head -n 50 | fzf` && git rebase -i `echo ${HASH} | awk '{ print $1 }'`^
