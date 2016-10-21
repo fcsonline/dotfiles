@@ -53,3 +53,16 @@ alias pi='ssh -X pi@192.168.1.118'
 alias z='zeus'
 alias zc='zeus console'
 alias open='xdg-open > /dev/null 2>&1'
+
+function notes {
+  NEW_NOTE="New note"
+  NOTES_PATH="${HOME}/.notes"
+  NOTES=$(find "${NOTES_PATH}" -iname '*.md')
+  FILE=$(printf "%s\n%s" "${NOTES}" "${NEW_NOTE}" | fzf --prompt='Choose a file: ')
+
+  if [ "${FILE}" == "${NEW_NOTE}" ]; then
+    vim +"cd ${NOTES_PATH}"
+  else
+    [[ ! -z "${FILE}" ]] && vim "${FILE}"
+  fi
+}

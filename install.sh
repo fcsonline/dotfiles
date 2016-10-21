@@ -35,6 +35,10 @@ ln -snf "${PWD}/vim" ~/.vim
 mkdir -p ~/.vim/{tmpdir,undodir}
 chmod 700 ~/.vim/{tmpdir,undodir}
 
+# NOTES
+message "Notes"
+mkdir ~/.notes
+
 pushd "${PWD}"
   git submodule init > /dev/null 2>&1
   git submodule update > /dev/null 2>&1
