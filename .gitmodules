@@ -46,3 +46,6 @@
 [submodule "tmux/plugins/tmux-fingers"]
 	path = tmux/plugins/tmux-fingers
 	url = https://github.com/Morantron/tmux-fingers
+[submodule "vim/bundle/vim-solidity"]
+	path = vim/bundle/vim-solidity
+	url = https://github.com/tomlion/vim-solidity.git
