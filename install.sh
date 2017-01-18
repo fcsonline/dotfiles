@@ -37,7 +37,7 @@ chmod 700 ~/.vim/{tmpdir,undodir}
 
 # NOTES
 message "Notes"
-mkdir ~/.notes
+mkdir -p ~/.notes
 
 pushd "${PWD}"
   git submodule init > /dev/null 2>&1
