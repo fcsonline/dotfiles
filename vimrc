@@ -92,6 +92,11 @@ let g:neomake_ruby_rubocop_maker = { 'exe': 'bundle', 'args': ['exec', 'rubocop'
 let g:neomake_javascript_makers = ['eslint']
 let g:neomake_solidity_makers = ['solc']
 
+let g:neomake_error_sign =   {'text': '➤', 'texthl': 'NeomakeErrorSign'}
+let g:neomake_warning_sign = {'text': '➤', 'texthl': 'NeomakeWarningSign'}
+let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
+let g:neomake_info_sign =    {'text': '➤', 'texthl': 'NeomakeInfoSign'}
+
 " Tell vim to remember certain things when we exit
 set viminfo='10,\"100,:20,%,n~/.viminfo
 
