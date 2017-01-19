@@ -118,8 +118,11 @@ let g:neomake_info_sign =    {'text': '➤', 'texthl': 'NeomakeInfoSign'}
 
 " FZF
 let g:fzf_command_prefix = 'FZF'
+let g:fzf_commits_log_options = '--pretty=oneline'
+
 nnoremap <leader>ff :FZFFiles<cr>
 nnoremap <leader>fb :FZFBuffers<cr>
+nnoremap <leader>fc :FZFCommits<cr>
 nnoremap <leader>ft :FZFTags<cr>
 nnoremap <leader>fh :FZFHistory<cr>
 
