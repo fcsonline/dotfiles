@@ -1,51 +1,6 @@
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline
-[submodule "vim/bundle/vim-surround"]
-	path = vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround
-[submodule "vim/bundle/vim-fugitive"]
-	path = vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = https://github.com/ervandew/supertab
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter
-[submodule "vim/bundle/delimitMate"]
-	path = vim/bundle/delimitMate
-	url = https://github.com/Raimondi/delimitMate
-[submodule "vim/bundle/minibufexpl.vim"]
-	path = vim/bundle/minibufexpl.vim
-	url = https://github.com/fholgado/minibufexpl.vim
-[submodule "vim/bundle/meta5"]
-	path = vim/bundle/meta5
-	url = https://github.com/christophermca/meta5
-[submodule "vim/bundle/vim-markdown"]
-	path = vim/bundle/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown.git
-[submodule "vim/bundle/vim-pug"]
-	path = vim/bundle/vim-pug
-	url = git://github.com/digitaltoad/vim-pug.git
-[submodule "vim/bundle/vim-rest-console"]
-	path = vim/bundle/vim-rest-console
-	url = https://github.com/diepm/vim-rest-console.git
 [submodule "tmux/plugins/tmux-battery"]
 	path = tmux/plugins/tmux-battery
 	url = https://github.com/tmux-plugins/tmux-battery
 [submodule "tmux/plugins/tmux-fingers"]
 	path = tmux/plugins/tmux-fingers
 	url = https://github.com/Morantron/tmux-fingers
-[submodule "vim/bundle/vim-solidity"]
-	path = vim/bundle/vim-solidity
-	url = https://github.com/tomlion/vim-solidity.git
-[submodule "vim/bundle/neomake"]
-	path = vim/bundle/neomake
-	url = git@github.com:neomake/neomake.git

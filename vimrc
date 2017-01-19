@@ -1,4 +1,23 @@
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+
+Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'https://github.com/bling/vim-airline'
+Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/ervandew/supertab'
+Plug 'https://github.com/scrooloose/nerdcommenter'
+Plug 'https://github.com/Raimondi/delimitMate'
+Plug 'https://github.com/fholgado/minibufexpl.vim'
+Plug 'https://github.com/christophermca/meta5'
+Plug 'https://github.com/plasticboy/vim-markdown'
+Plug 'https://github.com/digitaltoad/vim-pug'
+Plug 'https://github.com/diepm/vim-rest-console'
+Plug 'https://github.com/neomake/neomake'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
 
 set shiftwidth=2    " Use indents of 2 spaces
 set tabstop=2       " An indentation every four columns
@@ -90,12 +109,19 @@ autocmd! BufReadPost,BufWritePost * Neomake
 let g:neomake_ruby_enabled_makers = ['rubocop', 'reek']
 let g:neomake_ruby_rubocop_maker = { 'exe': 'bundle', 'args': ['exec', 'rubocop', '--format', 'emacs'] }
 let g:neomake_javascript_makers = ['eslint']
-let g:neomake_solidity_makers = ['solc']
+" let g:neomake_solidity_makers = ['solc']
 
 let g:neomake_error_sign =   {'text': '➤', 'texthl': 'NeomakeErrorSign'}
 let g:neomake_warning_sign = {'text': '➤', 'texthl': 'NeomakeWarningSign'}
 let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
 let g:neomake_info_sign =    {'text': '➤', 'texthl': 'NeomakeInfoSign'}
+
+" FZF
+let g:fzf_command_prefix = 'FZF'
+nnoremap <leader>ff :FZFFiles<cr>
+nnoremap <leader>fb :FZFBuffers<cr>
+nnoremap <leader>ft :FZFTags<cr>
+nnoremap <leader>fh :FZFHistory<cr>
 
 " Tell vim to remember certain things when we exit
 set viminfo='10,\"100,:20,%,n~/.viminfo
