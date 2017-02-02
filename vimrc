@@ -1,18 +1,20 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/scrooloose/nerdtree'
-Plug 'https://github.com/bling/vim-airline'
-Plug 'https://github.com/tpope/vim-surround'
-Plug 'https://github.com/tpope/vim-fugitive'
-Plug 'https://github.com/ervandew/supertab'
-Plug 'https://github.com/scrooloose/nerdcommenter'
-Plug 'https://github.com/Raimondi/delimitMate'
-Plug 'https://github.com/fholgado/minibufexpl.vim'
-Plug 'https://github.com/christophermca/meta5'
-Plug 'https://github.com/plasticboy/vim-markdown'
-Plug 'https://github.com/digitaltoad/vim-pug'
-Plug 'https://github.com/diepm/vim-rest-console'
-Plug 'https://github.com/neomake/neomake'
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
+Plug 'ervandew/supertab'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Raimondi/delimitMate'
+Plug 'christophermca/meta5'
+Plug 'plasticboy/vim-markdown'
+Plug 'digitaltoad/vim-pug'
+Plug 'diepm/vim-rest-console'
+Plug 'neomake/neomake'
+Plug 'janko-m/vim-test'
+Plug 'mhinz/vim-grepper'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -108,8 +110,9 @@ autocmd! BufReadPost,BufWritePost * Neomake
 
 let g:neomake_ruby_enabled_makers = ['rubocop', 'reek']
 let g:neomake_ruby_rubocop_maker = { 'exe': 'bundle', 'args': ['exec', 'rubocop', '--format', 'emacs'] }
-let g:neomake_javascript_makers = ['eslint']
-" let g:neomake_solidity_makers = ['solc']
+let g:neomake_ruby_reek_maker = { 'exe': 'bundle', 'args': ['exec', 'reek'] }
+" let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:neomake_javascript_eslint_maker = { 'exe': './node_modules/.bin/eslint', 'args': ['-c', './.eslintrc'] }
 
 let g:neomake_error_sign =   {'text': '➤', 'texthl': 'NeomakeErrorSign'}
 let g:neomake_warning_sign = {'text': '➤', 'texthl': 'NeomakeWarningSign'}
