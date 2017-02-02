@@ -169,6 +169,9 @@ if [ -f ~/.fzf.bash ]; then
     source ~/.fzf.bash
 fi
 
+# NodeJs bin
+export PATH=./node_modules/.bin:$PATH
+
 # Rbenv path
 export RBENV_ROOT="$HOME/.rbenv"
 if [ -d "$RBENV_ROOT" ]; then
