@@ -52,6 +52,7 @@ fi
 RED="$(tput bold)$(tput setaf 1)"
 GREEN="$(tput bold)$(tput setaf 2)"
 YELLOW="$(tput bold)$(tput setaf 3)"
+PURPLE=$(tput setaf 141)
 NORMAL=$(tput sgr0)
 
 function custom_ps1 {
@@ -69,10 +70,12 @@ function custom_ps1 {
   if [ $? -eq 0 ]; then
     GIT_BRANCH=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ \1/")
 
-    if [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]]; then
-      GIT_COLOR="${RED}"
-    else
+    if [[ $(git status -s 2> /dev/null | head -n1) =~ migrate ]]; then
+      GIT_COLOR="${PURPLE}"
+    elif [[ $(git status 2> /dev/null | tail -n1) =~ nothing ]]; then
       GIT_COLOR="${GREEN}"
+    else
+      GIT_COLOR="${RED}"
     fi
   else
     GIT_BRANCH=""
