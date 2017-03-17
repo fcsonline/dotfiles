@@ -1,3 +1,4 @@
 vim/tmpdir
 vim/undodir
 vim/plugged
+vim/autoload/*.old
