@@ -54,6 +54,9 @@ let mapleader=","   " Sets the leader key
 
 set list listchars=tab:..,trail:☠ " Display extra whitespace
 
+" Paste mode toggler
+set pastetoggle=<leader>p
+
 " Undo file
 set undofile
 set undodir=~/.vim/undodir/
