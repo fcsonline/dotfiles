@@ -70,7 +70,7 @@ function custom_ps1 {
   if [ $? -eq 0 ]; then
     GIT_BRANCH=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ \1/")
 
-    if [[ $(git status -s 2> /dev/null | head -n1) =~ migrate ]]; then
+    if [[ $(git status -s 2> /dev/null | head -n1) =~ '??' ]]; then
       GIT_COLOR="${PURPLE}"
     elif [[ $(git status 2> /dev/null | tail -n1) =~ nothing ]]; then
       GIT_COLOR="${GREEN}"
