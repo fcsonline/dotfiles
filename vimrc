@@ -14,7 +14,7 @@ Plug 'digitaltoad/vim-pug'
 Plug 'diepm/vim-rest-console'
 Plug 'neomake/neomake'
 Plug 'janko-m/vim-test'
-Plug 'mhinz/vim-grepper'
+Plug 'wincent/ferret'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
