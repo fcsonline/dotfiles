@@ -114,8 +114,7 @@ autocmd! BufReadPost,BufWritePost * Neomake
 let g:neomake_ruby_enabled_makers = ['rubocop', 'reek']
 let g:neomake_ruby_rubocop_maker = { 'exe': 'bundle', 'args': ['exec', 'rubocop', '--format', 'emacs'] }
 let g:neomake_ruby_reek_maker = { 'exe': 'bundle', 'args': ['exec', 'reek'] }
-" let g:neomake_javascript_enabled_makers = ['eslint']
-" let g:neomake_javascript_eslint_maker = { 'exe': './node_modules/.bin/eslint', 'args': ['-c', './.eslintrc'] }
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 let g:neomake_error_sign =   {'text': '➤', 'texthl': 'NeomakeErrorSign'}
 let g:neomake_warning_sign = {'text': '➤', 'texthl': 'NeomakeWarningSign'}
