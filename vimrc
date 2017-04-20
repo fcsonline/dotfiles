@@ -127,7 +127,7 @@ let g:fzf_commits_log_options = '--pretty=oneline'
 
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
-nnoremap <leader>ff :FZFFiles<cr>
+nnoremap <space><space> :FZFFiles<cr>
 nnoremap <leader>fb :FZFBuffers<cr>
 nnoremap <leader>fc :FZFCommits<cr>
 nnoremap <leader>ft :FZFTags<cr>
