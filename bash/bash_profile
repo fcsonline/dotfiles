@@ -1,1 +1,3 @@
 . ~/.bashrc
+
+export TRANSMISSION_WEB_HOME=~/dev/react-transmission/build
