@@ -15,6 +15,7 @@ Plug 'diepm/vim-rest-console'
 Plug 'neomake/neomake'
 Plug 'janko-m/vim-test'
 Plug 'wincent/ferret'
+Plug 'junegunn/goyo.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -127,6 +128,9 @@ nnoremap <leader>b :FZFBuffers<cr>
 
 " Sequences
 nmap <leader>s :for i in range(1,10) \| put ='192.168.0.'.i \| endfor
+
+" Goyo mode toggler
+map <leader>z :Goyo<CR>
 
 " Tell vim to remember certain things when we exit
 set viminfo='10,\"100,:20,%,n~/.viminfo
