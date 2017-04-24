@@ -50,7 +50,7 @@ set encoding=utf-8
 
 colorscheme meta5 " My favourite schemecolor
 
-let mapleader=","   " Sets the leader key
+let mapleader=" "   " Sets the leader key
 
 set list listchars=tab:..,trail:☠ " Display extra whitespace
 
@@ -102,8 +102,8 @@ set directory=~/.vim/tmpdir//,.
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.git']
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>m :NERDTreeFind<CR>
+map <leader>n :NERDTreeToggle<CR>
+map <leader>m :NERDTreeFind<CR>
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
@@ -116,22 +116,14 @@ let g:neomake_ruby_rubocop_maker = { 'exe': 'bundle', 'args': ['exec', 'rubocop'
 let g:neomake_ruby_reek_maker = { 'exe': 'bundle', 'args': ['exec', 'reek'] }
 let g:neomake_javascript_enabled_makers = ['eslint']
 
-let g:neomake_error_sign =   {'text': '➤', 'texthl': 'NeomakeErrorSign'}
-let g:neomake_warning_sign = {'text': '➤', 'texthl': 'NeomakeWarningSign'}
-let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
-let g:neomake_info_sign =    {'text': '➤', 'texthl': 'NeomakeInfoSign'}
-
 " FZF
 let g:fzf_command_prefix = 'FZF'
 let g:fzf_commits_log_options = '--pretty=oneline'
 
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
-nnoremap <space><space> :FZFFiles<cr>
-nnoremap <leader>fb :FZFBuffers<cr>
-nnoremap <leader>fc :FZFCommits<cr>
-nnoremap <leader>ft :FZFTags<cr>
-nnoremap <leader>fh :FZFHistory<cr>
+nnoremap <leader><space> :FZFFiles<cr>
+nnoremap <leader>b :FZFBuffers<cr>
 
 " Sequences
 nmap <leader>s :for i in range(1,10) \| put ='192.168.0.'.i \| endfor
