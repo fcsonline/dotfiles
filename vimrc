@@ -55,9 +55,6 @@ let mapleader=" "   " Sets the leader key
 
 set list listchars=tab:..,trail:☠ " Display extra whitespace
 
-" Paste mode toggler
-set pastetoggle=<leader>p
-
 " Undo file
 set undofile
 set undodir=~/.vim/undodir/
@@ -105,6 +102,9 @@ set directory=~/.vim/tmpdir//,.
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.git']
 map <leader>n :NERDTreeToggle<CR>
 map <leader>m :NERDTreeFind<CR>
+
+" Paste mode toggler
+map <leader>p :set invpaste paste?<CR>
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
