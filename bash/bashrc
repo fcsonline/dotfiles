@@ -135,13 +135,15 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Trim path directories
-export PROMPT_DIRTRIM=1
+export PROMPT_DIRTRIM=2
 
 # Love
 export EDITOR=vim
 
 # Enable vi mode in bash
 set -o vi
+bind -m vi-insert "\C-j":next-history
+bind -m vi-insert "\C-k":previous-history
 
 # Enable Ctrl+L in vi mode
 bind -m vi-insert "\C-l":clear-screen
