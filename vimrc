@@ -40,6 +40,7 @@ set statusline=%<\ %t\ %m%r%y%w%{fugitive#statusline()}%=Col:\ \%c\ Lin:\ \%l\/\
 set shell=/bin/bash " Used shell for executed commands
 set hlsearch        " To highlight all search matches
 set nowrap          " Don't wrap lines
+set backspace=indent,eol,start " Backspace options
 
 :set t_Co=256       " For certain color-limited terminals
 filetype on               " Turn on filetype detection
