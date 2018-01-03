@@ -16,6 +16,7 @@ Plug 'neomake/neomake'
 Plug 'janko-m/vim-test'
 Plug 'wincent/ferret'
 Plug 'junegunn/goyo.vim'
+Plug 'matze/vim-move'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -53,6 +54,10 @@ set encoding=utf-8
 colorscheme meta5 " My favourite schemecolor
 
 let mapleader=" "   " Sets the leader key
+
+let g:move_key_modifier = 'C' " Move plugin
+
+let g:fzf_buffers_jump = 1 " Disable jump to the existing window if possible
 
 set list listchars=tab:..,trail:☠ " Display extra whitespace
 
