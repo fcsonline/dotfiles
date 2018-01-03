@@ -57,7 +57,7 @@ NORMAL=$(tput sgr0)
 
 function custom_ps1 {
 
-  NUM_JOBS=$(jobs | wc -l)
+  NUM_JOBS=$(jobs | wc -l | sed 's/^ *//')
 
   if [ "${NUM_JOBS}" -gt "0" ]; then
     JOBS_LABEL=" \[${GREEN}\][${NUM_JOBS}]\[\033[00m\]"
