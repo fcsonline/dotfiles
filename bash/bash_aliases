@@ -46,6 +46,7 @@ alias sr='screen -r'
 
 # UTILS
 alias be='bundle exec'
+alias migrate='bundle exec rake db:migrate'
 alias d='docker'
 alias rl='rlwrap --multi-line -a --'
 alias mongod-repair='sudo rm /var/lib/mongodb/mongod.lock && sudo -u mongodb mongod -f /etc/mongodb.conf --repair && sudo service mongodb restart && sleep 30 && mongo'
