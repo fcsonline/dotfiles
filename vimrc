@@ -59,6 +59,8 @@ let g:move_key_modifier = 'C' " Move plugin
 
 let g:fzf_buffers_jump = 1 " Disable jump to the existing window if possible
 
+set switchbuf=vsplit " Split new buffer in quickfix
+
 set list listchars=tab:..,trail:☠ " Display extra whitespace
 
 " Undo file
@@ -67,6 +69,10 @@ set undodir=~/.vim/undodir/
 
 " Utilities
 cab uniq %s/^\(.*\)\(\n\1\)\+$/\1/
+
+" Decrease vim command timeout
+set ttimeout
+set ttimeoutlen=100
 
 " Tab completion options
 set wildmode=list:longest,list:full
