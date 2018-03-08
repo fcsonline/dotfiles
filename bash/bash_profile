@@ -1,3 +1,5 @@
 . ~/.bashrc
 
 export TRANSMISSION_WEB_HOME=~/dev/react-transmission/build
+
+export PATH="$HOME/.cargo/bin:$PATH"

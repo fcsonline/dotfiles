@@ -134,6 +134,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Locale
+export LC_ALL=en_US.UTF-8
+
 # Trim path directories
 export PROMPT_DIRTRIM=2
 
@@ -205,3 +208,5 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
