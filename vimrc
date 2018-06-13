@@ -17,6 +17,7 @@ Plug 'janko-m/vim-test'
 Plug 'wincent/ferret'
 Plug 'junegunn/goyo.vim'
 Plug 'matze/vim-move'
+Plug 'vim-syntastic/syntastic'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
