@@ -1,25 +1,24 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree'
-Plug 'bling/vim-airline'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-dispatch'
-Plug 'ervandew/supertab'
-Plug 'scrooloose/nerdcommenter'
-Plug 'Raimondi/delimitMate'
-Plug 'christophermca/meta5'
-Plug 'plasticboy/vim-markdown'
-Plug 'digitaltoad/vim-pug'
-Plug 'diepm/vim-rest-console'
-Plug 'neomake/neomake'
-Plug 'janko-m/vim-test'
-Plug 'wincent/ferret'
-Plug 'junegunn/goyo.vim'
-Plug 'matze/vim-move'
-Plug 'vim-syntastic/syntastic'
+Plug 'scrooloose/nerdtree'        " File navigator
+Plug 'bling/vim-airline'          " Vim fancy status line
+Plug 'tpope/vim-surround'         " Surround, wrap or replace code with chars
+Plug 'tpope/vim-fugitive'         " Git in vim
+Plug 'ervandew/supertab'          " Perform all your vim insert mode completions with Tab
+Plug 'scrooloose/nerdcommenter'   " Comment code with super powers
+Plug 'christophermca/meta5'       " Best colorscheme
+Plug 'diepm/vim-rest-console'     " REST console
+Plug 'janko-m/vim-test'           " Run test file from vim
+Plug 'tpope/vim-dispatch'         " Asynchronous build and test dispatcher
+Plug 'wincent/ferret'             " Enhanced multi-file search for Vim
+Plug 'junegunn/goyo.vim'          " Focus mode for writing
+Plug 'matze/vim-move'             " Move blocks of code
+Plug 'Raimondi/delimitMate'       " Auto close special chars
+Plug 'alvan/vim-closetag'         " Auto close tags
+Plug 'neomake/neomake'            " Async engine for code analysis
+Plug 'vim-syntastic/syntastic'    " Syntax support
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file finder
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
@@ -59,6 +58,8 @@ let mapleader=" "   " Sets the leader key
 let g:move_key_modifier = 'C' " Move plugin
 
 let g:fzf_buffers_jump = 1 " Disable jump to the existing window if possible
+
+let delimitMate_matchpairs = "(:),[:],{:}" " Autoclose just some chars
 
 set switchbuf=vsplit " Split new buffer in quickfix
 
@@ -138,6 +139,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 nnoremap <leader><space> :FZFFiles<cr>
 nnoremap <leader>b :FZFBuffers<cr>
+nnoremap <leader>t :TestNearest<cr>
 
 " Sequences
 nmap <leader>s :for i in range(1,10) \| put ='192.168.0.'.i \| endfor
