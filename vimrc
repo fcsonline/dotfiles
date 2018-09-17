@@ -53,6 +53,9 @@ set encoding=utf-8
 
 colorscheme meta5 " My favourite schemecolor
 
+let test#strategy = "dispatch"
+let test#ruby#rspec#executable = 'bundle exec rspec %'
+
 let mapleader=" "   " Sets the leader key
 
 let g:move_key_modifier = 'C' " Move plugin
