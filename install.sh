@@ -35,6 +35,10 @@ ln -snf "${PWD}/vim" ~/.vim
 mkdir -p ~/.vim/{tmpdir,undodir}
 chmod 700 ~/.vim/{tmpdir,undodir}
 
+# BYEBUG
+message "Byebug"
+ln -snf "${PWD}/byebugrc" ~/.byebugrc
+
 # NOTES
 message "Notes"
 mkdir -p ~/.notes
