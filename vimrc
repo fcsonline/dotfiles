@@ -17,6 +17,8 @@ Plug 'Raimondi/delimitMate'       " Auto close special chars
 Plug 'alvan/vim-closetag'         " Auto close tags
 Plug 'neomake/neomake'            " Async engine for code analysis
 Plug 'vim-syntastic/syntastic'    " Syntax support
+Plug 'SirVer/ultisnips'           " Track the engine.
+Plug 'honza/vim-snippets'         " Snippets are separated from the engine. Add this if you want them:
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file finder
 Plug 'junegunn/fzf.vim'
@@ -164,6 +166,12 @@ augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
 augroup END
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
 
 " Typo aliases
 :command WQ wq
