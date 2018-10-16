@@ -168,6 +168,8 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
 
+let delimitMate_expand_cr=1
+
 " Typo aliases
 :command WQ wq
 :command Wa wa
