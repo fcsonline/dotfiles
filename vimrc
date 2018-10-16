@@ -156,17 +156,11 @@ map <leader>z :Goyo<CR>
 " Tell vim to remember certain things when we exit
 set viminfo='10,\"100,:20,%,n~/.viminfo
 
-function! ResCur()
-  if line("'\"") <= line("$")
-    normal! g`"
-    return 1
-  endif
-endfunction
-
-augroup resCur
-  autocmd!
-  autocmd BufWinEnter * call ResCur()
-augroup END
+" Restores the cursor in last position
+:au BufReadPost *
+      \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+      \ |   exe "normal! g`\""
+      \ | endif
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
