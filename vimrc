@@ -135,6 +135,7 @@ let g:neomake_ruby_enabled_makers = ['rubocop', 'reek']
 let g:neomake_ruby_rubocop_maker = { 'exe': 'bundle', 'args': ['exec', 'rubocop', '--format', 'emacs'] }
 let g:neomake_ruby_reek_maker = { 'exe': 'bundle', 'args': ['exec', 'reek'] }
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 
 " FZF
 let g:fzf_command_prefix = 'FZF'
