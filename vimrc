@@ -19,6 +19,7 @@ Plug 'neomake/neomake'            " Async engine for code analysis
 Plug 'vim-syntastic/syntastic'    " Syntax support
 Plug 'SirVer/ultisnips'           " Track the engine.
 Plug 'honza/vim-snippets'         " Snippets are separated from the engine. Add this if you want them:
+Plug 'ap/vim-css-color'           " Colorize hexadecimal colors
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file finder
 Plug 'junegunn/fzf.vim'
