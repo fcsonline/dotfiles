@@ -147,6 +147,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 nnoremap <leader><space> :FZFFiles<cr>
 nnoremap <leader>b :FZFBuffers<cr>
 nnoremap <leader>t :TestNearest<cr>
+nnoremap <leader>o :only<cr>
 
 " Sequences
 nmap <leader>s :for i in range(1,10) \| put ='192.168.0.'.i \| endfor
