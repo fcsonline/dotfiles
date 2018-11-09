@@ -144,6 +144,9 @@ let g:fzf_commits_log_options = '--pretty=oneline'
 
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
+" Move to next mayus
+map m /[A-Z]<cr><esc>:noh<return>a
+
 nnoremap <leader><space> :FZFFiles<cr>
 nnoremap <leader>b :FZFBuffers<cr>
 nnoremap <leader>t :TestNearest<cr>
