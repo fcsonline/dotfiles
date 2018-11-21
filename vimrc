@@ -117,6 +117,7 @@ let g:vim_markdown_folding_disabled = 1
 " opening files with the same name in different directories
 set backupdir=~/.vim/tmpdir//,.
 set directory=~/.vim/tmpdir//,.
+set backupcopy=yes
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.git']
