@@ -7,6 +7,7 @@ Plug 'tpope/vim-fugitive'         " Git in vim
 Plug 'ervandew/supertab'          " Perform all your vim insert mode completions with Tab
 Plug 'scrooloose/nerdcommenter'   " Comment code with super powers
 Plug 'christophermca/meta5'       " Best colorscheme
+Plug 'NLKNguyen/papercolor-theme' " Another colorscheme
 Plug 'diepm/vim-rest-console'     " REST console
 Plug 'janko-m/vim-test'           " Run test file from vim
 Plug 'tpope/vim-dispatch'         " Asynchronous build and test dispatcher
@@ -16,6 +17,7 @@ Plug 'matze/vim-move'             " Move blocks of code
 Plug 'Raimondi/delimitMate'       " Auto close special chars
 Plug 'alvan/vim-closetag'         " Auto close tags
 Plug 'neomake/neomake'            " Async engine for code analysis
+Plug 'mattn/emmet-vim'            " Expansions
 Plug 'vim-syntastic/syntastic'    " Syntax support
 Plug 'SirVer/ultisnips'           " Track the engine.
 Plug 'honza/vim-snippets'         " Snippets are separated from the engine. Add this if you want them:
@@ -56,6 +58,9 @@ scriptencoding utf-8
 set encoding=utf-8
 
 colorscheme meta5 " My favourite schemecolor
+
+" set background=dark
+" colorscheme PaperColor
 
 let test#strategy = "dispatch"
 let test#ruby#rspec#executable = 'bundle exec rspec %'
