@@ -132,7 +132,8 @@ map <leader>p :set invpaste paste?<CR>
 let g:CommandTMaxHeight=20
 
 " Neomake
-autocmd! BufReadPost,BufWritePost * Neomake
+let blacklisted_files = ['schema.rb', 'routes.rb']
+autocmd! BufWritePost,BufEnter * if index(blacklisted_files, expand('%:t')) < 0 | Neomake
 
 let g:neomake_ruby_enabled_makers = ['rubocop', 'reek']
 let g:neomake_ruby_rubocop_maker = { 'exe': 'bundle', 'args': ['exec', 'rubocop', '--format', 'emacs'] }
