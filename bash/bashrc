@@ -160,10 +160,8 @@ stty start ''
 stty -ixon
 stty -ixoff
 
-# Disalbe capslock
-if which setxkbmap  >/dev/null; then
-  setxkbmap -option caps:ctrl_modifier
-fi
+# Map capslock to ctrl
+setxkbmap -layout us -option ctrl:nocaps
 
 # Keep the secrets, in secret
 if [ -f ~/.bash_secrets ]; then
