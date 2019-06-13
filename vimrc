@@ -60,8 +60,7 @@ set encoding=utf-8
 
 colorscheme meta5 " My favourite schemecolor
 
-" set background=dark
-" colorscheme PaperColor
+autocmd BufWritePre * %s/\s\+$//e " Remove trailing spaces
 
 let test#strategy = "dispatch"
 let test#ruby#rspec#executable = 'bundle exec rspec %'
