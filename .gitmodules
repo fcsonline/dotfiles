@@ -4,3 +4,6 @@
 [submodule "tmux/plugins/tmux-yank"]
 	path = tmux/plugins/tmux-yank
 	url = git@github.com:tmux-plugins/tmux-yank.git
+[submodule "tmux/plugins/tmux-thumbs"]
+	path = tmux/plugins/tmux-thumbs
+	url = git@github.com:fcsonline/tmux-thumbs.git
