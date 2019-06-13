@@ -7,3 +7,6 @@
 [submodule "tmux/plugins/tmux-thumbs"]
 	path = tmux/plugins/tmux-thumbs
 	url = git@github.com:fcsonline/tmux-thumbs.git
+[submodule "tmux/plugins/tmux-plugin-sysstat"]
+	path = tmux/plugins/tmux-plugin-sysstat
+	url = git@github.com:samoshkin/tmux-plugin-sysstat.git
