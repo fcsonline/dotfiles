@@ -6,8 +6,7 @@ Plug 'tpope/vim-surround'         " Surround, wrap or replace code with chars
 Plug 'tpope/vim-fugitive'         " Git in vim
 Plug 'ervandew/supertab'          " Perform all your vim insert mode completions with Tab
 Plug 'scrooloose/nerdcommenter'   " Comment code with super powers
-Plug 'christophermca/meta5'       " Best colorscheme
-Plug 'NLKNguyen/papercolor-theme' " Another colorscheme
+Plug 'NLKNguyen/papercolor-theme' " Best colorscheme
 Plug 'diepm/vim-rest-console'     " REST console
 Plug 'janko-m/vim-test'           " Run test file from vim
 Plug 'tpope/vim-dispatch'         " Asynchronous build and test dispatcher
@@ -58,7 +57,9 @@ syntax on                 " Turn on syntax on
 scriptencoding utf-8
 set encoding=utf-8
 
-colorscheme meta5 " My favourite schemecolor
+" My favourite schemecolor
+set background=dark
+colorscheme PaperColor
 
 autocmd BufWritePre * %s/\s\+$//e " Remove trailing spaces
 
