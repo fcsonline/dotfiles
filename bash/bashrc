@@ -161,7 +161,10 @@ stty -ixon
 stty -ixoff
 
 # Map capslock to ctrl
-setxkbmap -layout us -option ctrl:nocaps
+if which setxkbmap > /dev/null; then
+  setxkbmap -layout us -option ctrl:nocaps
+fi
+
 
 # Keep the secrets, in secret
 if [ -f ~/.bash_secrets ]; then
