@@ -4,25 +4,24 @@ Plug 'scrooloose/nerdtree'        " File navigator
 Plug 'bling/vim-airline'          " Vim fancy status line
 Plug 'tpope/vim-surround'         " Surround, wrap or replace code with chars
 Plug 'tpope/vim-fugitive'         " Git in vim
+Plug 'tpope/vim-endwise'          " Complete blocks
+Plug 'tpope/vim-commentary'       " Toggle comments
+Plug 'tpope/vim-dispatch'         " Asynchronous build and test dispatcher
 Plug 'ervandew/supertab'          " Perform all your vim insert mode completions with Tab
-Plug 'scrooloose/nerdcommenter'   " Comment code with super powers
 Plug 'NLKNguyen/papercolor-theme' " Best colorscheme
 Plug 'diepm/vim-rest-console'     " REST console
 Plug 'janko-m/vim-test'           " Run test file from vim
-Plug 'tpope/vim-dispatch'         " Asynchronous build and test dispatcher
 Plug 'wincent/ferret'             " Enhanced multi-file search for Vim
 Plug 'junegunn/goyo.vim'          " Focus mode for writing
-Plug 'matze/vim-move'             " Move blocks of code
 Plug 'Raimondi/delimitMate'       " Auto close special chars
 Plug 'alvan/vim-closetag'         " Auto close tags
 Plug 'neomake/neomake'            " Async engine for code analysis
 Plug 'mattn/emmet-vim'            " Expansions
 Plug 'vim-syntastic/syntastic'    " Syntax support
 Plug 'SirVer/ultisnips'           " Track the engine.
-Plug 'honza/vim-snippets'         " Snippets are separated from the engine. Add this if you want them:
 Plug 'ap/vim-css-color'           " Colorize hexadecimal colors
 Plug 'wellle/targets.vim'         " Modify faster (){}[] contents
-Plug 'AndrewRadev/splitjoin.vim'      " Better Split/Join lines
+Plug 'AndrewRadev/splitjoin.vim'  " Better Split/Join lines
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file finder
 Plug 'junegunn/fzf.vim'
@@ -40,8 +39,8 @@ set mouse=a         " Enable the use of the mouse.
 set incsearch       " While typing a search command, show immediately where the so far typed pattern matches.
 set number          " Show line numbers.
 set noerrorbells    " Shut up the beep
-set vb              " Visual flash bell bell
 set nocompatible    " Disable compatibility with vi
+set vb              " Visual flash bell bell
 set laststatus=2    " Display the status line always
 set statusline=%<\ %t\ %m%r%y%w%{fugitive#statusline()}%=Col:\ \%c\ Lin:\ \%l\/\%L\
 set shell=/bin/bash " Used shell for executed commands
@@ -115,6 +114,17 @@ map <up>    <nop>
 map <down>  <nop>
 map <left>  <nop>
 map <right> <nop>
+
+" Move between panes
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+map <C-n> <C-W>w
+
+" Natural split
+set splitbelow
+set splitright
 
 " Disable markdown folding
 let g:vim_markdown_folding_disabled = 1
