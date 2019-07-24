@@ -17,7 +17,7 @@ Plug 'Raimondi/delimitMate'       " Auto close special chars
 Plug 'alvan/vim-closetag'         " Auto close tags
 Plug 'neomake/neomake'            " Async engine for code analysis
 Plug 'mattn/emmet-vim'            " Expansions
-Plug 'vim-syntastic/syntastic'    " Syntax support
+Plug 'sheerun/vim-polyglot'       " Syntax support
 Plug 'SirVer/ultisnips'           " Track the engine.
 Plug 'ap/vim-css-color'           " Colorize hexadecimal colors
 Plug 'wellle/targets.vim'         " Modify faster (){}[] contents
