@@ -170,9 +170,10 @@ nnoremap <leader><space> :FZFFiles<cr>
 nnoremap <leader>b :FZFBuffers<cr>
 nnoremap <leader>t :TestNearest<cr>
 nnoremap <leader>o :only<cr>
+nnoremap <leader>s :w<cr>
 
 " Sequences
-nmap <leader>s :for i in range(1,10) \| put ='192.168.0.'.i \| endfor
+nmap <leader>r :for i in range(1,10) \| put ='192.168.0.'.i \| endfor
 
 " Goyo mode toggler
 map <leader>z :Goyo<CR>
