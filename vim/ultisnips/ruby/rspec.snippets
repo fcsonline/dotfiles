@@ -1,0 +1,70 @@
+global !p
+import inflector
+
+real_path = vim.eval('expand("%:p")')
+endglobal
+
+snippet fro "# frozen_string_literal: true"
+# frozen_string_literal: true
+
+$0
+endsnippet
+
+snippet rspec "RSpec rails skeleton"
+require 'rails_helper'
+
+RSpec.describe ${1:`!p snip.rv = inflector.to_ruby(real_path) `} do
+	$0
+end
+endsnippet
+
+snippet spec "RSpec skeleton"
+require 'spec_helper'
+
+RSpec.describe ${1:`!p snip.rv = inflector.to_ruby(real_path) `} do
+	$0
+end
+endsnippet
+
+snippet co "context 'text' do ... end"
+context '${1:contextName}' do
+	$0
+end
+endsnippet
+
+snippet de "describe 'text' do ... end"
+describe '${1:describeName}' do
+	$0
+end
+endsnippet
+
+snippet it "it 'text' do ... end"
+it '${1:text}' do
+	$0
+end
+endsnippet
+
+snippet	sub "subject { something }"
+subject { ${1:described_class}$0 }
+endsnippet
+
+snippet let "let(:name) { value }"
+let(:${1:name}) { ${2:value} }
+endsnippet
+
+snippet cre "create(:factory, ...)"
+create(:${1:factory}${2:, ${3:arg}})
+endsnippet
+
+snippet exm "expect(obj).to receive(:message) { return }"
+expect(${1:obj}).to receive(:${2:message})${3: { ${4:return} }}
+endsnippet
+
+snippet ex "expect(subject).to something"
+expect(${1:subject${2:.$3}}).to $0
+endsnippet
+
+snippet exb "expect { subject }.to something"
+expect { ${1:subject} }
+	.to $0
+endsnippet

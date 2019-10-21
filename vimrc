@@ -18,7 +18,7 @@ Plug 'alvan/vim-closetag'         " Auto close tags
 Plug 'neomake/neomake'            " Async engine for code analysis
 Plug 'mattn/emmet-vim'            " Expansions
 Plug 'sheerun/vim-polyglot'       " Syntax support
-Plug 'SirVer/ultisnips'           " Track the engine.
+Plug 'SirVer/ultisnips'           " Ultimate solution for snippets
 Plug 'ap/vim-css-color'           " Colorize hexadecimal colors
 Plug 'wellle/targets.vim'         " Modify faster (){}[] contents
 Plug 'AndrewRadev/splitjoin.vim'  " Better Split/Join lines
@@ -187,10 +187,12 @@ set viminfo='10,\"100,:20,%,n~/.viminfo
       \ |   exe "normal! g`\""
       \ | endif
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" Ultisnips
+let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/ultisnips']
+let g:UltiSnipsEditSplit = 'vertical'
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
 
 let delimitMate_expand_cr=1

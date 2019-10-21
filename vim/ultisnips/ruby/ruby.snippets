@@ -1,0 +1,45 @@
+global !p
+import inflector
+import rb_args
+
+real_path = vim.eval('expand("%:p")')
+tabstop = int(vim.eval('&tabstop'))
+endglobal
+
+snippet mod "module OutherModName ... end"
+module ${1:`!p snip.rv = inflector.outer_ruby_module(real_path)`}
+	$0
+end
+endsnippet
+
+snippet mo "module Name VISUAL end"
+module ${1:ModuleName}
+	${VISUAL}
+end
+endsnippet
+
+snippet cla "module InnerClassName ... end"
+class ${1:`!p snip.rv = inflector.inner_ruby_class(real_path)`}
+	$0
+end
+endsnippet
+
+snippet "(\s*)defi" "def initialize(arg:,) ... end" r
+`!p snip.rv = match.group(1)`def initialize(${1:arg})
+`!p rb_args.to_ruby_initializer(t[1], match, tabstop, snip)`
+`!p snip.rv = match.group(1)`end
+endsnippet
+
+snippet def "def method_name(args...) ... end"
+def ${1:method_name}${2:(${3:args})}
+	$0
+end
+endsnippet
+
+snippet @= "@ivar = value"
+@${1:var} = $0
+endsnippet
+
+snippet = "var = value"
+${1:var} = value
+endsnippet
