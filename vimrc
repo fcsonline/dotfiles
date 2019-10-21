@@ -4,7 +4,7 @@ Plug 'scrooloose/nerdtree'        " File navigator
 Plug 'bling/vim-airline'          " Vim fancy status line
 Plug 'tpope/vim-surround'         " Surround, wrap or replace code with chars
 Plug 'tpope/vim-fugitive'         " Git in vim
-Plug 'tpope/vim-endwise'          " Complete blocks
+" INCOMPATIBLE WITH DELIMATE Plug 'tpope/vim-endwise'          " Complete blocks do/end
 Plug 'tpope/vim-commentary'       " Toggle comments
 Plug 'tpope/vim-dispatch'         " Asynchronous build and test dispatcher
 Plug 'ervandew/supertab'          " Perform all your vim insert mode completions with Tab
@@ -13,8 +13,8 @@ Plug 'diepm/vim-rest-console'     " REST console
 Plug 'janko-m/vim-test'           " Run test file from vim
 Plug 'wincent/ferret'             " Enhanced multi-file search for Vim
 Plug 'junegunn/goyo.vim'          " Focus mode for writing
-Plug 'Raimondi/delimitMate'       " Auto close special chars
-Plug 'alvan/vim-closetag'         " Auto close tags
+Plug 'Raimondi/delimitMate'       " Auto close special chars {}, [], ()
+Plug 'alvan/vim-closetag'         " Auto close xml, html tags
 Plug 'neomake/neomake'            " Async engine for code analysis
 Plug 'mattn/emmet-vim'            " Expansions
 Plug 'sheerun/vim-polyglot'       " Syntax support
@@ -196,6 +196,14 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
 
 let delimitMate_expand_cr=1
+
+  " Add spell check to git commits
+augroup git_commits
+  autocmd!
+  autocmd FileType gitcommit setlocal spell spelllang=en_us
+augroup END
+
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
 
 " Typo aliases
 :command WQ wq
