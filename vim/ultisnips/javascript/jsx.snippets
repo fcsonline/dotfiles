@@ -25,12 +25,30 @@ snippet < "Create tag"
 </$1>
 endsnippet
 
+snippet > "Create closed tag"
+<$1$2/>
+endsnippet
+
 snippet cs "ClassName attribute"
 className={styles.${1:container}}
 endsnippet
 
 snippet b "Evaluated block"
 {{ $0 }}
+endsnippet
+
+snippet at "New html attribute"
+$1={$2}
+endsnippet
+
+snippet av "New html attribute with value"
+$1="$2"
+endsnippet
+
+snippet cx "ClassName styles"
+import styles from './index.scss'
+
+const cx = classNames.bind(styles)
 endsnippet
 
 snippet i18n "i18n translation"
