@@ -203,6 +203,14 @@ augroup git_commits
   autocmd FileType gitcommit setlocal spell spelllang=en_us
 augroup END
 
+" Typescript extra configuration
+augroup typescript
+  autocmd!
+
+  autocmd FileType typescript.tsx :call UltiSnips#AddFiletypes('javascript')
+  autocmd FileType typescript :call UltiSnips#AddFiletypes('javascript')
+augroup END
+
 let g:closetag_xhtml_filetypes = 'xhtml,jsx'
 
 " Typo aliases
