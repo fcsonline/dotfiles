@@ -169,6 +169,7 @@ map m /[A-Z]<cr><esc>:noh<return>a
 nnoremap <leader><space> :FZFFiles<cr>
 nnoremap <leader>b :FZFBuffers<cr>
 nnoremap <leader>t :TestNearest<cr>
+nnoremap <leader>f :TestFile<cr>
 nnoremap <leader>o :only<cr>
 nnoremap <leader>s :w<cr>
 
