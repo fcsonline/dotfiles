@@ -169,8 +169,9 @@ map m /[A-Z]<cr><esc>:noh<return>a
 
 nnoremap <leader><space> :FZFFiles<cr>
 nnoremap <leader>b :FZFBuffers<cr>
-nnoremap <leader>t :TestNearest<cr>
-nnoremap <leader>f :TestFile<cr>
+nnoremap <leader>c :FZFCommits<cr>
+nnoremap <leader>u :FZFSnippets<cr>
+nnoremap <leader>a :FZFAg<space>
 nnoremap <leader>o :only<cr>
 nnoremap <leader>s :w<cr>
 
@@ -199,7 +200,16 @@ let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your w
 
 let delimitMate_expand_cr=1
 
-  " Add spell check to git commits
+" Add spell check to git commits
+augroup ruby
+  autocmd!
+
+  autocmd FileType ruby nnoremap <leader>t :TestNearest<cr>
+  autocmd FileType ruby nnoremap <leader>f :TestFile<cr>
+  autocmd FileType ruby nnoremap <leader>r :Dispatch bundle exec rubocop --safe-auto-correct %<cr>
+augroup END
+
+" Add spell check to git commits
 augroup git_commits
   autocmd!
   autocmd FileType gitcommit setlocal spell spelllang=en_us
