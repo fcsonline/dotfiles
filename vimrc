@@ -186,8 +186,6 @@ let g:ale_fixers = {
       \ 'typescript': ['prettier']
       \}
 
-nnoremap <silent><leader>lf :ALEFix<CR>
-nnoremap <silent><leader>ld :ALEDetail<CR>
 
 " FZF
 let g:fzf_command_prefix = 'FZF'
@@ -198,6 +196,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -g "" --skip-vcs-ignores --hidden'
 " Move to next mayus
 map m /[A-Z]<cr><esc>:noh<return>a
 
+nnoremap <leader>x :ALEFix<CR>
 nnoremap <leader><space> :FZFFiles<cr>
 nnoremap <leader>b :FZFBuffers<cr>
 nnoremap <leader>t :TestNearest<cr>
