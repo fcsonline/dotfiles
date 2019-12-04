@@ -15,7 +15,7 @@ Plug 'wincent/ferret'             " Enhanced multi-file search for Vim
 Plug 'junegunn/goyo.vim'          " Focus mode for writing
 Plug 'Raimondi/delimitMate'       " Auto close special chars {}, [], ()
 Plug 'alvan/vim-closetag'         " Auto close xml, html tags
-Pluc 'dense-analysis/ale'         " Asynchronous Lint Engine
+Plug 'dense-analysis/ale'         " Asynchronous Lint Engine
 Plug 'mattn/emmet-vim'            " Expansions
 Plug 'sheerun/vim-polyglot'       " Syntax support
 Plug 'SirVer/ultisnips'           " Ultimate solution for snippets
@@ -149,8 +149,8 @@ map <leader>p :set invpaste paste?<CR>
 let g:CommandTMaxHeight=20
 
 " Neomake
-let blacklisted_files = ['schema.rb', 'routes.rb']
-autocmd! BufWritePost,BufEnter * if index(blacklisted_files, expand('%:t')) < 0 | Neomake
+" let blacklisted_files = ['schema.rb', 'routes.rb']
+" autocmd! BufWritePost,BufEnter * if index(blacklisted_files, expand('%:t')) < 0 | Neomake
 
 " let g:neomake_ruby_enabled_makers = ['rubocop', 'reek']
 " let g:neomake_ruby_rubocop_maker = { 'exe': 'bundle', 'args': ['exec', 'rubocop', '--format', 'emacs'] }
@@ -171,7 +171,7 @@ let g:ale_sign_warning = 'W'
 
 let g:ale_linters = {
       \ 'elixir': ['mix', 'credo'],
-      \ 'javascript': [],
+      \ 'javascript': ['eslint'],
       \ 'python': ['flake8'],
       \ 'ruby': ['rubocop', 'ruby'],
       \ 'rust': ['cargo']
