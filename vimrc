@@ -15,7 +15,7 @@ Plug 'wincent/ferret'             " Enhanced multi-file search for Vim
 Plug 'junegunn/goyo.vim'          " Focus mode for writing
 Plug 'Raimondi/delimitMate'       " Auto close special chars {}, [], ()
 Plug 'alvan/vim-closetag'         " Auto close xml, html tags
-Plug 'neomake/neomake'            " Async engine for code analysis
+Pluc 'dense-analysis/ale'         " Asynchronous Lint Engine
 Plug 'mattn/emmet-vim'            " Expansions
 Plug 'sheerun/vim-polyglot'       " Syntax support
 Plug 'SirVer/ultisnips'           " Ultimate solution for snippets
@@ -152,17 +152,48 @@ let g:CommandTMaxHeight=20
 let blacklisted_files = ['schema.rb', 'routes.rb']
 autocmd! BufWritePost,BufEnter * if index(blacklisted_files, expand('%:t')) < 0 | Neomake
 
-let g:neomake_ruby_enabled_makers = ['rubocop', 'reek']
-let g:neomake_ruby_rubocop_maker = { 'exe': 'bundle', 'args': ['exec', 'rubocop', '--format', 'emacs'] }
-let g:neomake_ruby_reek_maker = { 'exe': 'bundle', 'args': ['exec', 'reek'] }
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+" let g:neomake_ruby_enabled_makers = ['rubocop', 'reek']
+" let g:neomake_ruby_rubocop_maker = { 'exe': 'bundle', 'args': ['exec', 'rubocop', '--format', 'emacs'] }
+" let g:neomake_ruby_reek_maker = { 'exe': 'bundle', 'args': ['exec', 'reek'] }
+" let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+"
+" let g:neomake_ruby_rubocop_maker = { 'exe': 'docker-portal', 'args': ['rubocop', '--format', 'emacs'] }
+" let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:neomake_javascript_eslint_maker = { 'exe': 'docker-portal', 'args': ['eslint', '--format=compact'], 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .  '%W%f: line %l\, col %c\, Warning - %m,%-G,%-G%*\d problems%#', 'cwd': '%:p:h', 'output_stream': 'stdout' }
+
+" ALE - Asynchronous Linting Engine
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_sign_column_always = 1
+
+let g:ale_sign_error = 'E'
+let g:ale_sign_warning = 'W'
+
+let g:ale_linters = {
+      \ 'elixir': ['mix', 'credo'],
+      \ 'javascript': [],
+      \ 'python': ['flake8'],
+      \ 'ruby': ['rubocop', 'ruby'],
+      \ 'rust': ['cargo']
+      \}
+
+let g:ale_fixers = {
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'elixir': ['mix_format'],
+      \ 'javascript': ['prettier'],
+      \ 'ruby': ['rubocop'],
+      \ 'rust': ['rustfmt'],
+      \ 'typescript': ['prettier']
+      \}
+
+nnoremap <silent><leader>lf :ALEFix<CR>
+nnoremap <silent><leader>ld :ALEDetail<CR>
 
 " FZF
 let g:fzf_command_prefix = 'FZF'
 let g:fzf_commits_log_options = '--pretty=oneline'
 
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag -g "" --skip-vcs-ignores --hidden'
 
 " Move to next mayus
 map m /[A-Z]<cr><esc>:noh<return>a
