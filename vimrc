@@ -162,7 +162,7 @@ let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 let g:fzf_command_prefix = 'FZF'
 let g:fzf_commits_log_options = '--pretty=oneline'
 
-let $FZF_DEFAULT_COMMAND = 'ag -g "" --skip-vcs-ignores --hidden'
+let $FZF_DEFAULT_COMMAND = 'ag -g "" --ignore "node_modules" --ignore ".git" --hidden' " Ag is not interpreting .gitignore properly
 
 " Move to next mayus
 map m /[A-Z]<cr><esc>:noh<return>a
