@@ -79,6 +79,12 @@ let g:fzf_buffers_jump = 1 " Disable jump to the existing window if possible
 
 let delimitMate_matchpairs = "(:),[:],{:}" " Autoclose just some chars
 
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml' " These are the file extensions where this plugin is enabled.
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ }
+
 set switchbuf=vsplit " Split new buffer in quickfix
 
 set list listchars=tab:..,trail:☠ " Display extra whitespace
@@ -206,15 +212,6 @@ let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your w
 let delimitMate_expand_cr=1
 
 " Add spell check to git commits
-augroup ruby
-  autocmd!
-
-  autocmd FileType ruby nnoremap <leader>t :TestNearest<cr>
-  autocmd FileType ruby nnoremap <leader>f :TestFile<cr>
-  autocmd FileType ruby nnoremap <leader>r :Dispatch bundle exec rubocop --safe-auto-correct %<cr>
-augroup END
-
-" Add spell check to git commits
 augroup git_commits
   autocmd!
   autocmd FileType gitcommit setlocal spell spelllang=en_us
@@ -228,7 +225,16 @@ augroup markdown
   autocmd FileType markdown setlocal noshiftround
 augroup END
 
-" Typescript extra configuration
+" Ruby configuration
+augroup ruby
+  autocmd!
+
+  autocmd FileType ruby nnoremap <leader>t :TestNearest<cr>
+  autocmd FileType ruby nnoremap <leader>f :TestFile<cr>
+  autocmd FileType ruby nnoremap <leader>r :Dispatch bundle exec rubocop --safe-auto-correct %<cr>
+augroup END
+
+" Typescript configuration
 augroup typescript
   autocmd!
 
@@ -236,7 +242,20 @@ augroup typescript
   autocmd FileType typescript :call UltiSnips#AddFiletypes('javascript')
 augroup END
 
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+" Haml configuration
+augroup haml
+  autocmd!
+
+  autocmd FileType haml setlocal foldmethod=indent
+augroup END
+
+" Yaml configuration
+augroup yaml
+  autocmd!
+
+  autocmd FileType yaml setlocal foldmethod=indent
+  autocmd FileType yaml setlocal foldenable
+augroup END
 
 " Typo aliases
 :command WQ wq
