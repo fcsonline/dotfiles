@@ -29,12 +29,17 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-set shiftwidth=2    " Use indents of 2 spaces
-set tabstop=2       " An indentation every four columns
-set softtabstop=2   " Let backspace delete indent
-set expandtab       " Convert tab to spaces
-set autoindent      " Copy indent from current line when starting a new line
-                    " (typing <CR> in Insert mode or when using the "o" or "O" command).
+" Identation
+set tabstop=2      " number of visual spaces per TAB.
+set shiftwidth=2   " number of spaces to use for each step of (auto)indent.
+set softtabstop=2  " number of spaces in tab when editing.
+set shiftround     " round indent to multiple of 'shiftwidth'
+set expandtab      " tabs are spaces
+set smarttab
+set autoindent
+set copyindent
+set smartindent
+
 set ruler           " Show the line and column number of the cursor position, separated by a comma.
 set mouse=a         " Enable the use of the mouse.
 set incsearch       " While typing a search command, show immediately where the so far typed pattern matches.
@@ -49,7 +54,7 @@ set hlsearch        " To highlight all search matches
 set nowrap          " Don't wrap lines
 set backspace=indent,eol,start " Backspace options
 
-:set t_Co=256       " For certain color-limited terminals
+set t_Co=256       " For certain color-limited terminals
 filetype on               " Turn on filetype detection
 filetype plugin indent on " Turn on indentation
 syntax on                 " Turn on syntax on
@@ -213,6 +218,14 @@ augroup END
 augroup git_commits
   autocmd!
   autocmd FileType gitcommit setlocal spell spelllang=en_us
+augroup END
+
+" Markdown configuration
+augroup markdown
+  autocmd!
+  autocmd FileType markdown setlocal textwidth=79
+  autocmd FileType markdown setlocal spell spelllang=en_us
+  autocmd FileType markdown setlocal noshiftround
 augroup END
 
 " Typescript extra configuration
