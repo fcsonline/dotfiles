@@ -149,7 +149,7 @@ set directory=~/.vim/tmpdir//,.
 set backupcopy=yes
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.rbc$', '\~$', '\.git']
+let NERDTreeIgnore=['\.rbc$', '\~$', '\.git$']
 map <leader>n :NERDTreeToggle<CR>
 map <leader>m :NERDTreeFind<CR>
 
