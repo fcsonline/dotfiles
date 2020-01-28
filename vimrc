@@ -242,21 +242,6 @@ augroup typescript
   autocmd FileType typescript :call UltiSnips#AddFiletypes('javascript')
 augroup END
 
-" Haml configuration
-augroup haml
-  autocmd!
-
-  autocmd FileType haml setlocal foldmethod=indent
-augroup END
-
-" Yaml configuration
-augroup yaml
-  autocmd!
-
-  autocmd FileType yaml setlocal foldmethod=indent
-  autocmd FileType yaml setlocal foldenable
-augroup END
-
 " Typo aliases
 :command WQ wq
 :command Wa wa
