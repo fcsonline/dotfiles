@@ -82,7 +82,7 @@ function custom_ps1 {
     GIT_COLOR="${NORMAL}"
   fi
 
-  PS1="\[\033[01;32m\]\u@\h\[\033[00m\] ${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\]${JOBS_LABEL}\[${YELLOW}\]${GIT_BRANCH}\[\033[00m\]\[${GIT_COLOR}\] ▶\[${NORMAL}\] "
+  PS1="\[\033[01;32m\]\u@demo\[\033[00m\] ${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\]${JOBS_LABEL}\[${YELLOW}\]${GIT_BRANCH}\[\033[00m\]\[${GIT_COLOR}\] ▶\[${NORMAL}\] "
 }
 
 if [ "$color_prompt" = yes ]; then

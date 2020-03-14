@@ -1,12 +1,3 @@
-[submodule "tmux/plugins/tmux-battery"]
-	path = tmux/plugins/tmux-battery
-	url = https://github.com/tmux-plugins/tmux-battery
-[submodule "tmux/plugins/tmux-yank"]
-	path = tmux/plugins/tmux-yank
-	url = git@github.com:tmux-plugins/tmux-yank.git
-[submodule "tmux/plugins/tmux-thumbs"]
-	path = tmux/plugins/tmux-thumbs
-	url = git@github.com:fcsonline/tmux-thumbs.git
-[submodule "tmux/plugins/tmux-plugin-sysstat"]
-	path = tmux/plugins/tmux-plugin-sysstat
-	url = git@github.com:samoshkin/tmux-plugin-sysstat.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

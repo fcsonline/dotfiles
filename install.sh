@@ -8,8 +8,9 @@ message ()
 
 # TMUX
 message "Tmux"
+mkdir -p ~/.tmux/plugins
 ln -snf "${PWD}/tmux/tmux.conf" ~/.tmux.conf
-ln -snf "${PWD}/tmux/plugins" ~/.tmux-plugins
+ln -snf "${PWD}/tmux/plugins/tpm" ~/.tmux/plugins/tpm
 
 # BASH
 message "Bash"
