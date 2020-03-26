@@ -15,7 +15,8 @@ Plug 'wincent/ferret'             " Enhanced multi-file search for Vim
 Plug 'junegunn/goyo.vim'          " Focus mode for writing
 Plug 'Raimondi/delimitMate'       " Auto close special chars {}, [], ()
 Plug 'alvan/vim-closetag'         " Auto close xml, html tags
-Plug 'neomake/neomake'            " Async engine for code analysis
+Plug 'thinca/vim-localrc'         " Local vimrc config
+Plug 'w0rp/ale'                   " Linter & Async engine for code analysis
 Plug 'mattn/emmet-vim'            " Expansions
 Plug 'sheerun/vim-polyglot'       " Syntax support
 Plug 'SirVer/ultisnips'           " Ultimate solution for snippets
@@ -69,7 +70,7 @@ colorscheme PaperColor
 autocmd BufWritePre * %s/\s\+$//e " Remove trailing spaces
 
 let test#strategy = "dispatch"
-let test#ruby#rspec#executable = 'bundle exec rspec %'
+let test#ruby#rspec#executable = '/srv/app/bin/container-run bundle exec spring rspec %'
 
 let mapleader=" "   " Sets the leader key
 
@@ -159,15 +160,34 @@ map <leader>p :set invpaste paste?<CR>
 " Command-T configuration
 let g:CommandTMaxHeight=20
 
-" Neomake
-let blacklisted_files = ['schema.rb', 'routes.rb']
-autocmd! BufWritePost,BufEnter * if index(blacklisted_files, expand('%:t')) < 0 | Neomake
+" ALE - Asynchronous Linting Engine
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_sign_column_always = 1
 
-let g:neomake_ruby_enabled_makers = ['rubocop', 'reek']
-let g:neomake_ruby_rubocop_maker = { 'exe': 'bundle', 'args': ['exec', 'rubocop', '--format', 'emacs'] }
-let g:neomake_ruby_reek_maker = { 'exe': 'bundle', 'args': ['exec', 'reek'] }
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+let g:ale_sign_error = 'E'
+let g:ale_sign_warning = 'W'
+
+let g:ale_linters = {
+      \ 'ruby': ['rubocop', 'sorbet'],
+      \ 'typescript': ['eslint', 'tsserver'],
+      \ 'javascript': ['eslint', 'flow'],
+      \ 'rust': ['cargo']
+      \}
+
+let g:ale_fixers = {
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'ruby': ['rubocop', 'sorbet'],
+      \ 'javascript': ['eslint'],
+      \ 'typescript': ['eslint'],
+      \ 'rust': ['rustfmt'],
+      \}
+
+let g:ale_ruby_rubocop_executable = './bin/container-rubocop'
+let g:ale_ruby_sorbet_executable = './bin/container-sorbet'
+let g:ale_javascript_eslint_executable = './bin/container-javascript'
+
+nnoremap <silent><leader>lf :ALEFix<CR>
+nnoremap <silent><leader>ld :ALEDetail<CR>
 
 " FZF
 let g:fzf_command_prefix = 'FZF'
