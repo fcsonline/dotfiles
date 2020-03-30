@@ -162,7 +162,7 @@ stty -ixoff
 
 # Map capslock to ctrl
 if which setxkbmap > /dev/null; then
-  setxkbmap -layout us -option ctrl:nocaps
+  setxkbmap -option ctrl:nocaps
 fi
 
 
