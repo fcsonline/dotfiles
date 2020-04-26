@@ -76,8 +76,6 @@ let mapleader=" "   " Sets the leader key
 
 let g:move_key_modifier = 'C' " Move plugin
 
-let g:fzf_buffers_jump = 1 " Disable jump to the existing window if possible
-
 let delimitMate_matchpairs = "(:),[:],{:}" " Autoclose just some chars
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml' " These are the file extensions where this plugin is enabled.
@@ -192,6 +190,7 @@ nnoremap <silent><leader>ld :ALEDetail<CR>
 " FZF
 let g:fzf_command_prefix = 'FZF'
 let g:fzf_commits_log_options = '--pretty=oneline'
+let g:fzf_buffers_jump = 1 " Disable jump to the existing window if possible
 
 let $FZF_DEFAULT_COMMAND = 'ag -g "" --ignore "node_modules" --ignore ".git" --hidden' " Ag is not interpreting .gitignore properly
 
