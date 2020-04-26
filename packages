@@ -5,4 +5,5 @@ silversearcher-ag
 git
 lxc
 gawk
-fonts-powerline
+fonts-firacode
+libssl-dev
