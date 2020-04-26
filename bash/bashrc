@@ -49,49 +49,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-RED="$(tput bold)$(tput setaf 1)"
-GREEN="$(tput bold)$(tput setaf 2)"
-YELLOW="$(tput bold)$(tput setaf 3)"
-PURPLE=$(tput setaf 141)
-NORMAL=$(tput sgr0)
-
-function custom_ps1 {
-
-  NUM_JOBS=$(jobs | wc -l | sed 's/^ *//')
-
-  if [ "${NUM_JOBS}" -gt "0" ]; then
-    JOBS_LABEL=" \[${GREEN}\][${NUM_JOBS}]\[\033[00m\]"
-  else
-    JOBS_LABEL=""
-  fi
-
-  git branch &>/dev/null
-
-  if [ $? -eq 0 ]; then
-    GIT_BRANCH=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ \1/")
-
-    if [[ $(git status -s 2> /dev/null | head -n1) =~ '??' ]]; then
-      GIT_COLOR="${PURPLE}"
-    elif [[ $(git status 2> /dev/null | tail -n1) =~ nothing ]]; then
-      GIT_COLOR="${GREEN}"
-    else
-      GIT_COLOR="${RED}"
-    fi
-  else
-    GIT_BRANCH=""
-    GIT_COLOR="${NORMAL}"
-  fi
-
-  PS1="\[\033[01;32m\]\u@\h\[\033[00m\] ${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\]${JOBS_LABEL}\[${YELLOW}\]${GIT_BRANCH}\[\033[00m\]\[${GIT_COLOR}\] ▶\[${NORMAL}\] "
-}
-
-if [ "$color_prompt" = yes ]; then
-    PROMPT_COMMAND=custom_ps1
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -104,19 +61,11 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# some more ls aliases
-alias ll='ls -alFh'
-alias la='ls -A'
-alias l='ls -CF'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -209,3 +158,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+# Starship PS1
+eval "$(starship init bash)"
