@@ -1,0 +1,76 @@
+snippet tsig "extends T::Sig"
+extend T::Sig
+endsnippet
+
+snippet ty "# typed: true"
+# typed: true
+
+$0
+endsnippet
+
+snippet tyf "# typed: false"
+# typed: false
+
+$0
+endsnippet
+
+snippet sig "sig do params(param: Type).returns(Type) end"
+sig do
+	${1:params($2)}
+		${3:.${4:returns(${5:type})}}
+end
+endsnippet
+
+snippet part "param: Type(,)" i
+${1:param}: ${2:type}${3:, }
+endsnippet
+
+snippet si "sig { cursor }"
+sig { $1 }
+endsnippet
+
+snippet sigr "sig { params(params).returns(Type) }"
+sig { ${1:params(${2:param}: ${3:type}).}returns(${4:type}) }
+endsnippet
+
+snippet sigv "sig { params(params).void }"
+sig { ${1:params(${2:param}: ${3:type}).}void }
+endsnippet
+
+snippet params "class SomethingParams < T::Struct ... end"
+class ${1:Something}Params < T::Struct
+	$0
+end
+endsnippet
+
+snippet const "const :name, Type, default: x"
+const :${1:name}, ${2:Type}${3:, default:${4: value}}
+endsnippet
+
+snippet nil "T.nilable(Type)" i
+T.nilable(${1:Type})
+endsnippet
+
+snippet ary "T::Array[Something]" i
+T::Array[${1:Type}]
+endsnippet
+
+snippet hash "T::Hash[Something, Something]" i
+T::Hash[${1:KeyType}, ${2:ValueType}]
+endsnippet
+
+snippet range "T::Range[Type]" i
+T::Range[${1:Type}]
+endsnippet
+
+snippet tlet "T.let(val, Type)"
+T.let(${1:value}, ${2: Type})
+endsnippet
+
+snippet tmust "T.must(val)"
+T.must(${1:value})
+endsnippet
+
+snippet rets "returns(Type)" i
+returns(${1:Type})
+endsnippet
