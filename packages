@@ -1,9 +1,10 @@
 tmux
 vim
 htop
-silversearcher-ag
 git
 lxc
 gawk
 fonts-firacode
 libssl-dev
+ripgrep
+bat

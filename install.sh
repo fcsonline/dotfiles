@@ -48,5 +48,9 @@ pushd "${PWD}"
   git submodule update > /dev/null 2>&1
 popd
 
+# PACKAGES
+message "Installing packages"
+cat packages | xargs sudo apt install -o Dpkg::Options::="--force-overwrite" -y
+
 # Execute it immediately
 source ~/.bashrc
