@@ -168,7 +168,7 @@ let g:ale_sign_warning = 'W'
 let g:ale_linters = {
       \ 'ruby': ['rubocop', 'sorbet'],
       \ 'typescript': ['eslint', 'tsserver'],
-      \ 'javascript': ['eslint', 'flow'],
+      \ 'javascript': ['eslint'],
       \ 'rust': ['cargo']
       \}
 
@@ -192,7 +192,7 @@ let g:fzf_command_prefix = 'FZF'
 let g:fzf_commits_log_options = '--pretty=oneline'
 let g:fzf_buffers_jump = 1 " Disable jump to the existing window if possible
 
-let $FZF_DEFAULT_COMMAND = 'ag -g "" --ignore "node_modules" --ignore ".git" --hidden' " Ag is not interpreting .gitignore properly
+let $FZF_DEFAULT_COMMAND = 'rg --files -g "!tmp" -g "!vendor"'
 
 " Move to next mayus
 map m /[A-Z]<cr><esc>:noh<return>a
@@ -201,7 +201,7 @@ nnoremap <leader><space> :FZFFiles<cr>
 nnoremap <leader>b :FZFBuffers<cr>
 nnoremap <leader>c :FZFCommits<cr>
 nnoremap <leader>u :FZFSnippets<cr>
-nnoremap <leader>a :FZFAg<space>
+nnoremap <leader>a :FZFRg<space>
 nnoremap <leader>o :only<cr>
 nnoremap <leader>s :w<cr>
 
