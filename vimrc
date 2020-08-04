@@ -24,6 +24,7 @@ Plug 'ap/vim-css-color'           " Colorize hexadecimal colors
 Plug 'wellle/targets.vim'         " Modify faster (){}[] contents
 Plug 'AndrewRadev/splitjoin.vim'  " Better Split/Join lines
 Plug 'rhysd/vim-grammarous'       " Spell and grammar checks
+Plug 'mogelbrod/vim-jsonpath'     " Navigating JSON document
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file finder
 Plug 'junegunn/fzf.vim'
@@ -229,6 +230,9 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
 
 let delimitMate_expand_cr=1
+
+" Utility command for JSON searches
+command JsonSearch execute "call jsonpath#goto()"
 
 " Add spell check to git commits
 augroup git_commits
