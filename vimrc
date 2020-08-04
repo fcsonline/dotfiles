@@ -265,6 +265,12 @@ augroup typescript
   autocmd FileType typescript :call UltiSnips#AddFiletypes('javascript')
 augroup END
 
+augroup SyntaxSettings
+  autocmd!
+  autocmd BufNewFile,BufRead *.tsx set filetype=typescript
+  autocmd BufNewFile,BufRead *.jsx set filetype=javascript
+augroup END
+
 " Typo aliases
 :command WQ wq
 :command Wa wa
