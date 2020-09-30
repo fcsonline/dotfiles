@@ -25,6 +25,7 @@ Plug 'wellle/targets.vim'         " Modify faster (){}[] contents
 Plug 'AndrewRadev/splitjoin.vim'  " Better Split/Join lines
 Plug 'rhysd/vim-grammarous'       " Spell and grammar checks
 Plug 'mogelbrod/vim-jsonpath'     " Navigating JSON document
+Plug 'wellle/targets.vim'         " Add more text objects
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file finder
 Plug 'junegunn/fzf.vim'
