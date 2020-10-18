@@ -29,8 +29,42 @@ snippet > "Create closed tag"
 <$1$2/>
 endsnippet
 
+snippet props "Destructure props"
+const { $0 } = this.props
+endsnippet
+
+snippet comment "comment"
+{/* $0 */}
+endsnippet
+
+snippet imp "import"
+import { $1 } from '$2'
+endsnippet
+
+snippet req "require"
+const { $1 } = require('$2')
+endsnippet
+
 snippet cs "ClassName attribute"
-className={styles.${1:container}}
+className={$1}
+endsnippet
+
+snippet re "return jsx"
+return (
+  $1
+)
+endsnippet
+
+snippet map "map iterator"
+{${1:items}.map((${1/(.*)s/$1/}) => (
+  $2
+))}
+endsnippet
+
+snippet af "Arrow function"
+($1) => {
+  $2
+}
 endsnippet
 
 snippet b "Evaluated block"
@@ -45,10 +79,14 @@ snippet av "New html attribute with value"
 $1="$2"
 endsnippet
 
-snippet cx "ClassName styles"
-import styles from './index.scss'
+snippet ex "export default"
+export default $1
+endsnippet
 
-const cx = classNames.bind(styles)
+snippet me "module exports"
+module.exports {
+  $1
+}
 endsnippet
 
 snippet i18n "i18n translation"
