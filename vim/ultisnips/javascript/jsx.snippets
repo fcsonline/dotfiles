@@ -55,6 +55,12 @@ return (
 )
 endsnippet
 
+snippet ref "return function"
+return ($1) => {
+  $2
+}
+endsnippet
+
 snippet map "map iterator"
 {${1:items}.map((${1/(.*)s/$1/}) => (
   $2
