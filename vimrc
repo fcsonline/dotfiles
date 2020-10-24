@@ -18,7 +18,14 @@ Plug 'alvan/vim-closetag'         " Auto close xml, html tags
 Plug 'thinca/vim-localrc'         " Local vimrc config
 Plug 'w0rp/ale'                   " Linter & Async engine for code analysis
 Plug 'mattn/emmet-vim'            " Expansions
+
+let g:polyglot_disabled = [
+      \'typescript'
+      \'jsx',
+      \]
+
 Plug 'sheerun/vim-polyglot'       " Syntax support
+
 Plug 'SirVer/ultisnips'           " Ultimate solution for snippets
 Plug 'ap/vim-css-color'           " Colorize hexadecimal colors
 Plug 'wellle/targets.vim'         " Modify faster (){}[] contents
@@ -26,6 +33,11 @@ Plug 'AndrewRadev/splitjoin.vim'  " Better Split/Join lines
 Plug 'rhysd/vim-grammarous'       " Spell and grammar checks
 Plug 'mogelbrod/vim-jsonpath'     " Navigating JSON document
 Plug 'wellle/targets.vim'         " Add more text objects
+Plug 'rodjek/vim-puppet'          " Puppet syntax support
+
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'leafgarland/typescript-vim' " Syntax & Typescript support
+Plug 'peitalin/vim-jsx-typescript' "Syntax & Typescript support
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file finder
 Plug 'junegunn/fzf.vim'
@@ -262,14 +274,9 @@ augroup END
 augroup typescript
   autocmd!
 
+  autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
   autocmd FileType typescript.tsx :call UltiSnips#AddFiletypes('javascript')
   autocmd FileType typescript :call UltiSnips#AddFiletypes('javascript')
-augroup END
-
-augroup SyntaxSettings
-  autocmd!
-  autocmd BufNewFile,BufRead *.tsx set filetype=typescript
-  autocmd BufNewFile,BufRead *.jsx set filetype=javascript
 augroup END
 
 " Typo aliases
