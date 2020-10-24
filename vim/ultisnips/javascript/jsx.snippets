@@ -98,3 +98,14 @@ endsnippet
 snippet i18n "i18n translation"
 i18n.t('$1'$2)
 endsnippet
+
+# Hooks
+snippet useS "const [val, hook] = React.useState<Type>(val)"
+const [${1:value}, set${1/\w+\s*/\u$0/}] = React.useState${2:<${3:Type}>}(${4:val})
+endsnippet
+
+snippet useE "React.useEffect(() => ...)"
+React.useEffect(() => {
+	$0
+}${1:, [${2:deps}]})
+endsnippet
