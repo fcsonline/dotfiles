@@ -270,6 +270,14 @@ augroup ruby
   autocmd FileType ruby nnoremap <leader>r :Dispatch bundle exec rubocop --safe-auto-correct %<cr>
 augroup END
 
+" Rust configuration
+augroup rust
+  autocmd!
+
+  autocmd FileType rust setlocal shiftwidth=2 softtabstop=2 expandtab
+  autocmd FileType rust :call UltiSnips#AddFiletypes('rust')
+augroup END
+
 " Typescript configuration
 augroup typescript
   autocmd!
