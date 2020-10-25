@@ -160,4 +160,8 @@ export NVM_DIR="$HOME/.nvm"
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 # Starship PS1
-eval "$(starship init bash)"
+if which starship > /dev/null; then
+  eval "$(starship init bash)"
+else
+  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
