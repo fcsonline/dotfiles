@@ -234,6 +234,10 @@ set viminfo='10,\"100,:20,%,n~/.viminfo
       \ |   exe "normal! g`\""
       \ | endif
 
+" Go to Normal mode fast
+inoremap jj <ESC>
+inoremap <ESC> <NOP>
+
 " Ultisnips
 let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/ultisnips']
 let g:UltiSnipsEditSplit = 'vertical'
