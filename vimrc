@@ -208,9 +208,6 @@ let g:fzf_buffers_jump = 1 " Disable jump to the existing window if possible
 
 let $FZF_DEFAULT_COMMAND = 'rg --files -g "!tmp" -g "!vendor"'
 
-" Move to next mayus
-map m /[A-Z]<cr><esc>:noh<return>a
-
 nnoremap <leader><space> :FZFFiles<cr>
 nnoremap <leader>b :FZFBuffers<cr>
 nnoremap <leader>c :FZFCommits<cr>
