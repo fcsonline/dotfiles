@@ -2,6 +2,15 @@ snippet cprops "Props destructuring"
 const { $1 } = this.props$0
 endsnippet
 
+snippet icomp "functional inline component"
+const $1 = ($2) => {
+  return (
+    <div className={$3}>$4
+    </div>
+  )
+}
+endsnippet
+
 snippet fcomp "functional component"
 export default function $1 ($2) {
   return (
@@ -11,11 +20,17 @@ export default function $1 ($2) {
 }
 endsnippet
 
-snippet comp "class component"
+snippet ccomp "class component"
 export default class ${1:Component} extends React.Component<Props> {
   return (
     $2
   )
+}
+endsnippet
+
+snippet inter "interface"
+interface ${1:Props} {
+  $2
 }
 endsnippet
 
