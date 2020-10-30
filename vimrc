@@ -84,7 +84,7 @@ colorscheme PaperColor
 autocmd BufWritePre * %s/\s\+$//e " Remove trailing spaces
 
 let test#strategy = "dispatch"
-let test#ruby#rspec#executable = '/srv/app/bin/container-run bundle exec spring rspec %'
+let test#ruby#rspec#executable = 'SKIP_PULL=true /srv/app/bin/container-run bundle exec spring rspec %'
 
 let mapleader=" "   " Sets the leader key
 
