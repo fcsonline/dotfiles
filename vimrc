@@ -19,6 +19,8 @@ Plug 'thinca/vim-localrc'         " Local vimrc config
 Plug 'w0rp/ale'                   " Linter & Async engine for code analysis
 Plug 'mattn/emmet-vim'            " Expansions
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 let g:polyglot_disabled = [
       \'typescript'
       \'jsx',
@@ -215,6 +217,13 @@ nnoremap <leader>u :FZFSnippets<cr>
 nnoremap <leader>a :FZFRg<space>
 nnoremap <leader>o :only<cr>
 nnoremap <leader>s :w<cr>
+
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Sequences
 nmap <leader>r :for i in range(1,10) \| put ='192.168.0.'.i \| endfor
