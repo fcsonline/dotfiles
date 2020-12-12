@@ -10,7 +10,7 @@ Plug 'tpope/vim-dispatch'         " Asynchronous build and test dispatcher
 Plug 'ervandew/supertab'          " Perform all your vim insert mode completions with Tab
 Plug 'NLKNguyen/papercolor-theme' " Best colorscheme
 Plug 'diepm/vim-rest-console'     " REST console
-Plug 'janko-m/vim-test'           " Run test file from vim
+Plug 'vim-test/vim-test'          " Run test file from vim
 Plug 'wincent/ferret'             " Enhanced multi-file search for Vim
 Plug 'junegunn/goyo.vim'          " Focus mode for writing
 Plug 'Raimondi/delimitMate'       " Auto close special chars {}, [], ()
@@ -280,6 +280,8 @@ augroup END
 augroup rust
   autocmd!
 
+  autocmd FileType rust nnoremap <leader>t :TestNearest<cr>
+  autocmd FileType rust nnoremap <leader>f :TestFile<cr>
   autocmd FileType rust setlocal shiftwidth=2 softtabstop=2 expandtab
   autocmd FileType rust :call UltiSnips#AddFiletypes('rust')
 augroup END
