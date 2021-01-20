@@ -18,6 +18,7 @@ Plug 'alvan/vim-closetag'         " Auto close xml, html tags
 Plug 'thinca/vim-localrc'         " Local vimrc config
 Plug 'w0rp/ale'                   " Linter & Async engine for code analysis
 Plug 'mattn/emmet-vim'            " Expansions
+Plug 'AndrewRadev/switch.vim'     " Switch / Toggle words
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -216,8 +217,7 @@ nnoremap <leader>c :FZFCommits<cr>
 nnoremap <leader>u :FZFSnippets<cr>
 nnoremap <leader>a :FZFRg<space>
 nnoremap <leader>o :only<cr>
-nnoremap <leader>s :w<cr>
-
+nnoremap <leader>s :Switch<cr>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
