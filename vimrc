@@ -22,6 +22,8 @@ Plug 'AndrewRadev/switch.vim'     " Switch / Toggle words
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+let g:coc_disable_startup_warning = 1
+
 let g:polyglot_disabled = [
       \'typescript'
       \'jsx',
