@@ -3,3 +3,4 @@
 export TRANSMISSION_WEB_HOME=~/dev/react-transmission/build
 
 export PATH="$HOME/.cargo/bin:$PATH"
+alias crowdin='java -jar /usr/local/bin/crowdin-cli.jar'
