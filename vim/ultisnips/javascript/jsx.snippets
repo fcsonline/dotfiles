@@ -60,7 +60,7 @@ snippet req "require"
 const { $1 } = require('$2')
 endsnippet
 
-snippet cs "ClassName attribute"
+snippet cs "className attribute"
 className={$1}
 endsnippet
 
@@ -82,9 +82,15 @@ snippet map "map iterator"
 ))}
 endsnippet
 
-snippet af "Arrow function"
+snippet af "arrow function"
 ($1) => {
   $2
+}
+endsnippet
+
+snippet caf "const arrow function"
+const $1 = ($2) => {
+  $3
 }
 endsnippet
 
