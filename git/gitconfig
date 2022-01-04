@@ -2,7 +2,7 @@
 	name = Ferran Basora
 	email = fcsonline@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /Users/ferranbasora/.gitignore_global
 [color]
 	diff = auto

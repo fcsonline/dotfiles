@@ -36,6 +36,9 @@ alias sr='screen -r'
 # UTILS
 alias open='xdg-open > /dev/null 2>&1'
 
+# DEVELOPMENT
+alias vim='nvim'
+
 notes() {
   NEW_NOTE="New note"
   NOTES_PATH="${HOME}/.notes"

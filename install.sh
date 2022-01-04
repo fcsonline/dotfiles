@@ -6,6 +6,10 @@ message ()
   echo -e "Installing \033[1;3${RCOLOR}m$1\033[0m scripts..."
 }
 
+# PACKAGES
+message "Installing packages"
+cat packages | xargs sudo apt install -o Dpkg::Options::="--force-overwrite" -y
+
 # TMUX
 message "Tmux"
 ln -snf "${PWD}/tmux/tmux.conf" ~/.tmux.conf
@@ -35,6 +39,14 @@ ln -snf "${PWD}/vim" ~/.vim
 mkdir -p ~/.vim/{tmpdir,undodir}
 chmod 700 ~/.vim/{tmpdir,undodir}
 
+# NVIM
+message "NVim"
+ln -snf "${PWD}/nvim/" ~/.config/nvim
+
+# nerd-fonts
+curl -o /tmp/UbuntuMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip
+unzip /tmp/UbuntuMono.zip -d ~/.local/share/fonts
+
 # BYEBUG
 message "Byebug"
 ln -snf "${PWD}/byebugrc" ~/.byebugrc
@@ -47,10 +59,6 @@ pushd "${PWD}"
   git submodule init > /dev/null 2>&1
   git submodule update > /dev/null 2>&1
 popd
-
-# PACKAGES
-message "Installing packages"
-cat packages | xargs sudo apt install -o Dpkg::Options::="--force-overwrite" -y
 
 # Execute it immediately
 source ~/.bashrc
