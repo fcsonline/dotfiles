@@ -188,7 +188,7 @@ let g:ale_linters = {
       \ 'ruby': ['rubocop', 'sorbet'],
       \ 'typescript': ['eslint', 'tsserver'],
       \ 'javascript': ['eslint'],
-      \ 'rust': ['cargo']
+      \ 'rust': ['analyzer', 'cargo']
       \}
 
 let g:ale_fixers = {
