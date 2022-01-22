@@ -22,18 +22,28 @@ lsp_installer.on_server_ready(function(server)
 end)
 
 -- install automatically all this lsp on start
-local installable_servers = {
-  "bashls",
-  "cssls",
-  "html",
-  "jsonls",
-  "yamlls",
-  "sorbet",
-  "solargraph",
-  "sumneko_lua",
-  "tailwindcss",
-  "tsserver"
-}
+local installable_servers = {}
+
+if vim.fn.executable("node") == 1 then
+  table.insert(installable_servers, 'bashls')
+  table.insert(installable_servers, 'cssls')
+  table.insert(installable_servers, 'bashls')
+  table.insert(installable_servers, 'html')
+  table.insert(installable_servers, 'jsonls')
+  table.insert(installable_servers, 'yamlls')
+  table.insert(installable_servers, 'tailwindcss')
+  table.insert(installable_servers, 'tsserver')
+end
+
+if vim.fn.executable("ruby") == 1 then
+  table.insert(installable_servers, 'sorbet')
+  table.insert(installable_servers, 'solargraph')
+end
+
+if vim.fn.executable("rustc") == 1 then
+  table.insert(installable_servers, 'rust_analyzer')
+end
+
 for _, name in pairs(installable_servers) do
   local found, server = lsp_installer.get_server(name)
   if found then
