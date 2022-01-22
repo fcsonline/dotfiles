@@ -97,5 +97,6 @@ keymap("n", "<leader>m", "<cmd>NERDTreeFind<cr>", opts)
 -- Find and replace with Spectre
 keymap("n", "<leader>S", "<cmd>:lua require('spectre').open()<cr>", opts)
 
--- Lsp Code actions
+-- Lsp Actions
 keymap("n", "<cr>", "<cmd>:lua vim.lsp.buf.code_action()<cr>", opts)
+keymap("n", "<leader>F", "<cmd>:lua vim.lsp.buf.formatting_sync(nil, 5000)<cr>", opts)
