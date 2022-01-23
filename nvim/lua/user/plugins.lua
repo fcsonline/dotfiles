@@ -84,7 +84,13 @@ return packer.startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'    -- snippet completions
 
   -- language completions
-  use { 'saecki/crates.nvim', tag = 'v0.1.0', requires = { 'nvim-lua/plenary.nvim' }, config = function() require('crates').setup() end, } -- cargo completions
+  use { 'saecki/crates.nvim', tag = 'v0.1.0', requires = { 'nvim-lua/plenary.nvim' }, config = function()
+    if PACKER_BOOTSTRAP then
+      return
+    end
+
+    require('crates').setup()
+  end, } -- cargo completions
   use { 'David-Kunz/cmp-npm', requires = { 'nvim-lua/plenary.nvim' } } -- npm completions
 
   -- lsp
@@ -100,6 +106,10 @@ return packer.startup(function(use)
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
+      if PACKER_BOOTSTRAP then
+        return
+      end
+
       require('trouble').setup {
         -- auto_open = true,
         -- auto_close = true
