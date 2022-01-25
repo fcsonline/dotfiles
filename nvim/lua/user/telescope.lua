@@ -9,7 +9,7 @@ telescope.setup {
   defaults = {
 
     prompt_prefix = " ",
-    selection_caret = " ",
+    selection_caret = " ",
     path_display = { "smart" },
 
     mappings = {
