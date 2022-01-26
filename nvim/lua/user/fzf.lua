@@ -76,8 +76,8 @@ require('fzf-lua').setup {
     on_create = function()
       -- called once upon creation of the fzf main window
       -- can be used to add custom fzf-lua mappings, e.g:
-      --   vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", "<Down>",
-      --     { silent = true, noremap = true })
+      vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", "<Down>", { silent = true, noremap = true })
+      vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", "<Up>", { silent = true, noremap = true })
     end,
   },
   keymap = {
