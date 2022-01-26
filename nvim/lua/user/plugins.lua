@@ -63,6 +63,9 @@ return packer.startup(function(use)
   use 'steelsojka/pears.nvim'       -- Auto pairs (){}[]
   use 'lewis6991/gitsigns.nvim'     -- Extra Git UI
   use 'rhysd/vim-grammarous'        -- A Grammarly like plugin
+  use { 'ibhagwan/fzf-lua', requires = { 'kyazdani42/nvim-web-devicons' } } -- Fuzzy file finder
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- ast parser
+  use 'windwp/nvim-ts-autotag'      -- auto close html,jsx,tsx,svelte tags
 
   -- My favourity colorscheme
   use({ 'catppuccin/nvim', as = 'catppuccin' })
@@ -93,14 +96,14 @@ return packer.startup(function(use)
   end, } -- cargo completions
   use { 'David-Kunz/cmp-npm', requires = { 'nvim-lua/plenary.nvim' } } -- npm completions
 
+  -- snippets
+  use 'L3MON4D3/LuaSnip'            --snippet engine
+  use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
+
   -- lsp
   use 'neovim/nvim-lspconfig'       -- enable LSP
   use 'williamboman/nvim-lsp-installer' -- simple to use language server installer
   use 'jose-elias-alvarez/null-ls.nvim' -- Extra LSP's
-
-  -- snippets
-  use 'L3MON4D3/LuaSnip'            --snippet engine
-  use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
 
   use {
     'folke/trouble.nvim',
@@ -116,12 +119,6 @@ return packer.startup(function(use)
       }
     end
   }
-
-  -- Telescope
-  use 'nvim-telescope/telescope.nvim'
-
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- ast parser
-  use 'windwp/nvim-ts-autotag' -- auto close html,jsx,tsx,svelte tags
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

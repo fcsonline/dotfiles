@@ -81,13 +81,13 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
-keymap("n", "<leader><leader>", "<cmd>Telescope git_files<cr>", opts)
-keymap("n", "<leader>a", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<leader>c", "<cmd>Telescope git_commits<cr>", opts)
-keymap("n", "<leader>d", "<cmd>Telescope lsp_definitions<cr>", opts)
-keymap("n", "<leader>i", "<cmd>Telescope lsp_implementations<cr>", opts)
-keymap("n", "<leader>r", "<cmd>Telescope lsp_references<cr>", opts)
+keymap("n", "<leader><leader>", "<cmd>FzfLua git_files<cr>", opts)
+keymap("n", "<leader>a", "<cmd>FzfLua live_grep<cr>", opts)
+keymap("n", "<leader>b", "<cmd>FzfLua buffers<cr>", opts)
+keymap("n", "<leader>c", "<cmd>FzfLua git_commits<cr>", opts)
+keymap("n", "<leader>d", "<cmd>FzfLua lsp_definitions<cr>", opts)
+keymap("n", "<leader>i", "<cmd>FzfLua lsp_implementations<cr>", opts)
+keymap("n", "<leader>r", "<cmd>FzfLua lsp_references<cr>", opts)
 keymap("n", "<leader>t", "<cmd>TroubleToggle<cr>", opts)
 
 -- NERDTree configuration
