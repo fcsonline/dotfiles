@@ -88,6 +88,7 @@ keymap("n", "<leader>c", "<cmd>FzfLua git_commits<cr>", opts)
 keymap("n", "<leader>d", "<cmd>FzfLua lsp_definitions<cr>", opts)
 keymap("n", "<leader>i", "<cmd>FzfLua lsp_implementations<cr>", opts)
 keymap("n", "<leader>r", "<cmd>FzfLua lsp_references<cr>", opts)
+keymap("n", "<leader>l", "<cmd>FzfLua resume<cr>", opts)
 keymap("n", "<leader>t", "<cmd>TroubleToggle<cr>", opts)
 
 -- NERDTree configuration
