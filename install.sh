@@ -8,12 +8,14 @@ message ()
 
 # PACKAGES
 message "Installing packages"
-cat packages | xargs sudo apt install -o Dpkg::Options::="--force-overwrite" -y
+cat packages | xargs sudo apt install -qq -o Dpkg::Options::="--force-overwrite" -y
 
 # TMUX
 message "Tmux"
+mkdir -p ~/.tmux/plugins
 ln -snf "${PWD}/tmux/tmux.conf" ~/.tmux.conf
-ln -snf "${PWD}/tmux/plugins" ~/.tmux-plugins
+ln -snf "${PWD}/tmux/plugins/tpm" ~/.tmux/plugins/tpm
+~/.tmux/plugins/tpm/bin/install_plugins > /dev/null
 
 # BASH
 message "Bash"
@@ -44,8 +46,8 @@ message "NVim"
 ln -snf "${PWD}/nvim/" ~/.config/nvim
 
 # nerd-fonts
-curl -o /tmp/UbuntuMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip
-unzip /tmp/UbuntuMono.zip -d ~/.local/share/fonts
+curl -L -s -o /tmp/UbuntuMono.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip"
+unzip -uq /tmp/UbuntuMono.zip -d ~/.local/share/fonts
 
 # BYEBUG
 message "Byebug"
