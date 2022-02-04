@@ -165,3 +165,4 @@ if which starship > /dev/null; then
 else
   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
+. "$HOME/.cargo/env"
