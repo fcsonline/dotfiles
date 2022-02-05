@@ -6,6 +6,12 @@ message ()
   echo -e "Installing \033[1;3${RCOLOR}m$1\033[0m scripts..."
 }
 
+# SUBMODULES
+pushd "${PWD}"
+  git submodule init > /dev/null 2>&1
+  git submodule update > /dev/null 2>&1
+popd
+
 # PACKAGES
 message "Installing packages"
 cat packages | xargs sudo apt install -qq -o Dpkg::Options::="--force-overwrite" -y
@@ -56,11 +62,6 @@ ln -snf "${PWD}/byebugrc" ~/.byebugrc
 # NOTES
 message "Notes"
 mkdir -p ~/.notes
-
-pushd "${PWD}"
-  git submodule init > /dev/null 2>&1
-  git submodule update > /dev/null 2>&1
-popd
 
 # Execute it immediately
 source ~/.bashrc
