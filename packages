@@ -9,3 +9,4 @@ fonts-firacode
 libssl-dev
 ripgrep
 bat
+shellcheck
