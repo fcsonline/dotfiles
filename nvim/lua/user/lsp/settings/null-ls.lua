@@ -26,8 +26,8 @@ if exists_local_file('.rubocop.yml') and exists_local_file('Gemfile') then
   }))
 end
 
-table.insert(null_ls_sources, formatting.eslint)
-table.insert(null_ls_sources, diagnostics.eslint)
+table.insert(null_ls_sources, formatting.eslint_d)
+table.insert(null_ls_sources, diagnostics.eslint_d)
 table.insert(null_ls_sources, formatting.rustywind) -- Tailwind organizer
 table.insert(null_ls_sources, diagnostics.shellcheck)
 table.insert(null_ls_sources, completion.spell.with({ filetypes = { "markdown" } }))
