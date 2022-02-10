@@ -21,7 +21,7 @@ message "Tmux"
 mkdir -p ~/.tmux/plugins
 ln -snf "${PWD}/tmux/tmux.conf" ~/.tmux.conf
 ln -snf "${PWD}/tmux/plugins/tpm" ~/.tmux/plugins/tpm
-~/.tmux/plugins/tpm/bin/install_plugins > /dev/null
+TMUX_PLUGIN_MANAGER_PATH="${HOME}/.tmux/plugins/" ~/.tmux/plugins/tpm/bin/install_plugins > /dev/null
 
 # BASH
 message "Bash"
