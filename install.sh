@@ -54,6 +54,8 @@ ln -snf "${PWD}/nvim/" ~/.config/nvim
 # nerd-fonts
 curl -L -s -o /tmp/UbuntuMono.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip"
 unzip -uq /tmp/UbuntuMono.zip -d ~/.local/share/fonts
+curl -L -s -o /tmp/FiraCode.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip"
+unzip -uq /tmp/FiraCode.zip -d ~/.local/share/fonts
 
 # BYEBUG
 message "Byebug"
