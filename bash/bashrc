@@ -99,8 +99,8 @@ set -o vi
 bind -m vi-insert "\C-l":clear-screen
 
 # Local bin path
-if [ -d ~/.bin ]; then
-  export PATH=~/.bin:$PATH
+if [ -d ~/.local/bin ]; then
+  export PATH=~/.local/bin:$PATH
 fi
 
 # Disable flow control. Ctrl-s + Ctrl-q
