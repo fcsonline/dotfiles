@@ -35,6 +35,7 @@ alias sr='screen -r'
 
 # UTILS
 alias open='xdg-open > /dev/null 2>&1'
+alias remove_colors='sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"'
 
 # DEVELOPMENT
 alias vim='nvim'
