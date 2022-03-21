@@ -1,4 +1,11 @@
--- Initialize null-ls linters and formatters
+-- Factorial Backend Linters:
+--
+-- rubocop (by null-ls)
+-- shellcheck (by null-ls)
+-- semgrep (by null-ls)
+-- sorbet (by rubocop)
+-- solargraph (lsp)
+
 local status_null, null_ls = pcall(require, "null-ls")
 if not status_null then
   return
@@ -9,16 +16,19 @@ local diagnostics = null_ls.builtins.diagnostics
 local completion = null_ls.builtins.completion
 local null_ls_sources = {}
 
-local exists_local_file = function(local_path)
-  return vim.fn.filereadable(vim.fn.getcwd() .. "/" .. local_path) == 1
-end
+table.insert(null_ls_sources, diagnostics.rubocop.with({
+  command = ".nvim/rubocop",
+  timeout = 30000
+}))
 
-table.insert(null_ls_sources, formatting.stylua)
-table.insert(null_ls_sources, formatting.eslint_d)
-table.insert(null_ls_sources, diagnostics.eslint_d)
-table.insert(null_ls_sources, formatting.rustywind) -- Tailwind organizer
-table.insert(null_ls_sources, diagnostics.shellcheck)
-table.insert(null_ls_sources, completion.spell.with({ filetypes = { "markdown" } }))
+table.insert(null_ls_sources, diagnostics.shellcheck.with({
+  command = ".nvim/shellcheck",
+  args = { "$FILENAME" }
+}))
+
+table.insert(null_ls_sources, diagnostics.semgrep.with({
+  command = ".nvim/semgrep",
+}))
 
 if #null_ls_sources ~= 0 then
   null_ls.setup({
