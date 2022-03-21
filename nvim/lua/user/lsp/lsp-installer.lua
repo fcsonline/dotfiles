@@ -37,7 +37,6 @@ end
 
 if vim.fn.executable("ruby") == 1 then
   table.insert(installable_servers, 'sorbet')
-  table.insert(installable_servers, 'solargraph')
 end
 
 if vim.fn.executable("rustc") == 1 then
