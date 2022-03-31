@@ -7,14 +7,15 @@ message ()
 }
 
 # SUBMODULES
-pushd "${PWD}"
+pushd "${PWD}" || exit
   git submodule init > /dev/null 2>&1
   git submodule update > /dev/null 2>&1
-popd
+popd || exit
 
 # PACKAGES
 message "Installing packages"
-cat packages | xargs sudo apt install -qq -o Dpkg::Options::="--force-overwrite" -y
+sudo apt update > /dev/null 2>&1
+sudo apt install -qq -o Dpkg::Options::="--force-overwrite" -y "$(cat packages)" > /dev/null 2>&1
 
 # TMUX
 message "Tmux"
@@ -39,13 +40,6 @@ yes | ~/.fzf/install > /dev/null 2>&1
 # GIT
 message "Git"
 ln -sf "${PWD}/git/gitconfig" ~/.gitconfig
-
-# VIM
-message "Vim"
-ln -snf "${PWD}/vimrc" ~/.vimrc
-ln -snf "${PWD}/vim" ~/.vim
-mkdir -p ~/.vim/{tmpdir,undodir}
-chmod 700 ~/.vim/{tmpdir,undodir}
 
 # NVIM
 message "NVim"
