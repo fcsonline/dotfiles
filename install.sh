@@ -12,6 +12,9 @@ pushd "${PWD}" || exit
   git submodule update > /dev/null 2>&1
 popd || exit
 
+# BASIC FOLDERS
+mkdir -p ~/.config ~/.local
+
 # PACKAGES
 message "Installing packages"
 sudo apt update > /dev/null 2>&1
@@ -43,9 +46,14 @@ ln -sf "${PWD}/git/gitconfig" ~/.gitconfig
 
 # NVIM
 message "NVim"
-ln -snf "${PWD}/nvim/" ~/.config/nvim
+ln -snf "${PWD}/nvim" ~/.config/nvim
+
+# Starship
+message "Starship"
+ln -snf "${PWD}/starship/starship.toml" ~/.config/starship.toml
 
 # nerd-fonts
+mkdir -p ~/.local/share/fonts
 curl -L -s -o /tmp/UbuntuMono.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip"
 unzip -uq /tmp/UbuntuMono.zip -d ~/.local/share/fonts
 curl -L -s -o /tmp/FiraCode.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip"
