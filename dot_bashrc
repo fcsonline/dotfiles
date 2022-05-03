@@ -1,0 +1,167 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# don't put duplicate lines in the history. See bash(1) for more options
+# ... or force ignoredups and ignorespace
+HISTCONTROL=ignoredups:ignorespace
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+# Locale
+export LC_ALL=en_US.UTF-8
+
+# Trim path directories
+export PROMPT_DIRTRIM=2
+
+# Love
+export EDITOR=vim
+
+# Enable vi mode in bash
+set -o vi
+
+# Enable Ctrl+L in vi mode
+bind -m vi-insert "\C-l":clear-screen
+
+# Local bin path
+if [ -d ~/.local/bin ]; then
+  export PATH=~/.local/bin:$PATH
+fi
+
+# Disable flow control. Ctrl-s + Ctrl-q
+stty stop ''
+stty start ''
+stty -ixon
+stty -ixoff
+
+# Map capslock to ctrl
+if which setxkbmap > /dev/null; then
+  setxkbmap -option ctrl:nocaps
+fi
+
+
+# Keep the secrets, in secret
+if [ -f ~/.bash_secrets ]; then
+    source ~/.bash_secrets
+fi
+
+# Awesome command search
+if [ -f ~/.fzf.bash ]; then
+    source ~/.fzf.bash
+fi
+
+# NodeJs bin
+export PATH=./node_modules/.bin:$PATH
+
+# Rbenv path
+export RBENV_ROOT="$HOME/.rbenv"
+if [ -d "$RBENV_ROOT" ]; then
+  export PATH="$RBENV_ROOT/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+
+# Google Chrome Devopt Tools
+export PATH=$PATH:$HOME/Development/depot_tools
+
+# Go environment
+if [ -d "$HOME/Development/go" ]; then
+  export GOPATH="$HOME/Development/go"
+  export PATH="$PATH:$GOPATH/bin"
+fi
+
+# Ruby environment
+if [ -f "$HOME/.rvm/scripts/rvm" ]; then
+  source "$HOME/.rvm/scripts/rvm"
+fi
+
+# Rust environment
+if [ -f "$HOME/.cargo/env" ]; then
+  source $HOME/.cargo/env
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+# Starship PS1
+if which starship > /dev/null; then
+  eval "$(starship init bash)"
+else
+  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
