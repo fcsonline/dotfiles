@@ -27,15 +27,10 @@ alias gp='git publish'
 alias gpr='git pull --rebase'
 alias gs='git status -s'
 
-# SCREEN
-alias sc='screen -q'
-alias sd='screen -d'
-alias sl='screen -ls'
-alias sr='screen -r'
-
 # UTILS
 alias open='xdg-open > /dev/null 2>&1'
 alias remove_colors='sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"'
+alias c='chezmoi'
 
 # DEVELOPMENT
 alias bat='batcat'
