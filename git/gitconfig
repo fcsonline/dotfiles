@@ -51,7 +51,8 @@
 	pamvimconflicts= !FILES=`git status -s | grep '^[UMDA]\\{2\\} ' | awk '{ print $2 }' | fzf -x -m` && nvim -O ${FILES}
 	pamgrep= !sh -c 'FILES=`git grep -l -A 0 -B 0 $1 $2 | fzf -x -m` && nvim -O `echo ${FILES} | cut -d':' -f1 | xargs`' -
   pamvimlog= !HASH=`git log --pretty=oneline | head -n 50 | fzf` && HASHZ=`echo ${HASH} | awk '{ print $1 }'` && FILES=`git show --diff-filter=d --pretty='format:' --name-only $HASHZ | grep -v -e '^$' | fzf -x -m` && nvim -O ${FILES}
-	pamreset= !HASH=`git log --pretty=oneline | head -n 50 | fzf` && git reset --soft `echo ${HASH} | awk '{ print $1 }'`^
+	pamreset= !HASH=`git log --pretty=oneline | head -n 50 | fzf` && git reset --soft `echo ${HASH} | awk '{ print $1 }'`
+	pamresethard= !HASH=`git log --pretty=oneline | head -n 50 | fzf` && git reset --hard `echo ${HASH} | awk '{ print $1 }'`
 [push]
 	default = simple
 [merge "railsschema"]
