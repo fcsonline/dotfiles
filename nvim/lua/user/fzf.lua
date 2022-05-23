@@ -285,7 +285,7 @@ require('fzf-lua').setup {
     -- otherwise auto-detect prioritizes `rg` over `grep`
     -- default options are controlled by 'rg|grep_opts'
     -- cmd            = "rg --vimgrep",
-    rg_opts           = "--column --line-number --no-heading --color=always --smart-case --max-columns=512",
+    rg_opts           = "--hidden --column --line-number --no-heading --color=always --smart-case --max-columns=512",
     grep_opts         = "--binary-files=without-match --line-number --recursive --color=auto --perl-regexp",
     -- 'live_grep_glob' options:
     glob_flag         = "--iglob",  -- for case sensitive globs use '--glob'
