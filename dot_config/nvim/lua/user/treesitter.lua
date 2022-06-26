@@ -4,7 +4,7 @@ if not status_configs then
 end
 
 configs.setup {
-  ensure_installed = "maintained",
+  -- ensure_installed = "maintained",
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = {

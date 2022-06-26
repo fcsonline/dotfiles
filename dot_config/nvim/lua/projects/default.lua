@@ -21,7 +21,7 @@ if #null_ls_sources ~= 0 then
     debug = true,
     sources = null_ls_sources,
     on_attach = function(client)
-      if client.resolved_capabilities.document_formatting then
+      if client.server_capabilities.document_formatting then
         vim.cmd([[
           augroup LspFormatting
           autocmd! * <buffer>

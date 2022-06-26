@@ -1,5 +1,14 @@
 #!/bin/bash
 
+while true; do
+  read -p "Do you wish to install the rest of stuff? " yn
+  case $yn in
+    [Yy]* ) break;;
+    [Nn]* ) exit;;
+    * ) echo "Please answer yes or no.";;
+  esac
+done
+
 echo "📦 Installing packages..."
 sudo DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq -y $(cat packages) > /dev/null
