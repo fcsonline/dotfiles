@@ -6,6 +6,7 @@ com.transmissionbt.Transmission
 com.valvesoftware.Steam
 io.neovim.nvim
 md.obsidian.Obsidian
+com.logseq.Logseq
 me.kozec.syncthingtk
 org.chromium.Chromium
 org.flameshot.Flameshot
