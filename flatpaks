@@ -1,4 +1,5 @@
 com.bitwarden.desktop
+com.chmouel.gnomeNextMeetingApplet
 com.discordapp.Discord
 com.slack.Slack
 com.spotify.Client
@@ -16,5 +17,5 @@ org.libreoffice.LibreOffice
 org.mozilla.firefox
 org.stellarium.Stellarium
 org.telegram.desktop
+org.videolan.VLC
 us.zoom.Zoom
-com.chmouel.gnomeNextMeetingApplet
